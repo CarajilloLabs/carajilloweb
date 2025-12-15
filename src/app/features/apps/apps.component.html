@@ -1,0 +1,74 @@
+<section class="apps-section">
+  <div class="apps-container">
+    <div class="apps-header fade-in-up">
+      <h1 class="apps-title">
+        Nuestras <span class="gradient-text">Apps</span>
+      </h1>
+      <p class="apps-description">
+        Proyectos en los que estamos trabajando. Algunas ya están disponibles, otras están en desarrollo.
+        Todas hechas con dedicación y muchas tazas de café.
+      </p>
+    </div>
+
+    <div class="apps-grid">
+      @for (app of apps(); track app.title) {
+        <div class="app-card-wrapper fade-in-up" [style.--app-color]="app.color">
+          <p-card class="app-card">
+            <ng-template pTemplate="header">
+              <div class="app-card-header">
+                <img [src]="app.logo" [alt]="app.title + ' logo'" class="app-logo">
+                <p-tag 
+                  [value]="getStatusLabel(app.status)" 
+                  [severity]="getStatusSeverity(app.status)"
+                  styleClass="status-tag" />
+              </div>
+            </ng-template>
+
+            <div class="app-content">
+              <h2 class="app-title">{{ app.title }}</h2>
+              <p class="app-subtitle">{{ app.description }}</p>
+              <p class="app-description">{{ app.longDescription }}</p>
+
+              <div class="app-technologies">
+                @for (tech of app.technologies; track tech) {
+                  <span class="tech-tag">
+                    <i class="pi pi-tag"></i>
+                    {{ tech }}
+                  </span>
+                }
+              </div>
+            </div>
+
+            <ng-template pTemplate="footer">
+              <div class="app-actions">
+                @if (app.playStoreUrl) {
+                  <p-button 
+                    label="Ver en Play Store" 
+                    icon="pi pi-android"
+                    (onClick)="openLink(app.playStoreUrl)"
+                    [rounded]="true"
+                    styleClass="app-button" />
+                } @else if (app.externalUrl) {
+                  <p-button 
+                    label="Visitar sitio" 
+                    icon="pi pi-external-link"
+                    (onClick)="openLink(app.externalUrl)"
+                    [rounded]="true"
+                    styleClass="app-button" />
+                } @else {
+                  <p-button 
+                    label="Próximamente" 
+                    icon="pi pi-clock"
+                    [disabled]="true"
+                    [rounded]="true"
+                    styleClass="app-button" />
+                }
+              </div>
+            </ng-template>
+          </p-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+

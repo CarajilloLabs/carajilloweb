@@ -1,0 +1,82 @@
+/* Estilos globales para botones PrimeNG */
+// Botones principales con estilo común (borde moderno)
+::ng-deep .custom-button,
+::ng-deep .app-button,
+::ng-deep .p-button.custom-button,
+::ng-deep .p-button.app-button {
+  background: transparent !important;
+  border: 2px solid rgba(102, 126, 234, 0.6) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  overflow: hidden !important;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+
+  .p-button-label,
+  .p-button-icon {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:not(:disabled):hover {
+    border-color: rgba(102, 126, 234, 1) !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3) !important;
+
+    &::before {
+      left: 0;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.4 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    cursor: not-allowed !important;
+  }
+
+  .p-button-icon {
+    color: inherit !important;
+  }
+}
+
+// Variante con gradiente (para CTA principales)
+::ng-deep .custom-button-gradient,
+::ng-deep .p-button.custom-button-gradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 12px !important;
+
+  &:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4) !important;
+  }
+
+  &:disabled {
+    opacity: 0.5 !important;
+  }
+
+  .p-button-icon {
+    color: inherit !important;
+  }
+}
+

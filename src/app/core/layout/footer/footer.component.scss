@@ -23,16 +23,25 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 600;
+  color: #FF6B35;
+  font-weight: 700;
 }
 
 .footer-subtext {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.85rem;
-  margin: 0;
+  margin: 0.25rem 0;
+}
+
+.secondary-text {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.footer-subtext-small {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  margin: 0.5rem 0 0 0;
 }
 

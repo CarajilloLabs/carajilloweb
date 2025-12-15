@@ -33,7 +33,7 @@ export class AppsComponent {
       technologies: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Remote Config', 'App Links'],
       logo: 'assets/dojotime-logo.png',
       status: 'development',
-      color: '#667eea'
+      color: '#FF6B35'
     },
     {
       title: 'EquiGasto',
@@ -43,7 +43,7 @@ export class AppsComponent {
       logo: 'assets/equigasto-logo.png',
       playStoreUrl: 'https://play.google.com/store/apps/details?id=com.sire.equigasto',
       status: 'released',
-      color: '#764ba2'
+      color: '#FF6B35'
     }
   ]);
 

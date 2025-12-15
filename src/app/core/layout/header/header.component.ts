@@ -10,7 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <header class="header">
       <div class="header-container">
         <a routerLink="/" class="logo">
-          <span class="logo-text">F&S</span>
+          <img src="assets/carajillolabs-logo.svg" alt="Carajillolabs" class="logo-img" />
         </a>
         
         <nav class="nav">

@@ -1,0 +1,49 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Vaso de carajillo con forma de reloj de arena - centro muy estrecho -->
+  <!-- Forma única continua con curvas cúbicas Bezier que se estrechan mucho en el centro -->
+  <!-- Bordes superior e inferior anchos, centro muy estrecho -->
+  
+  <!-- Fondo naranja (licor/miel) - parte superior -->
+  <path d="M 25 24 L 25 28 C 25 29 50 29 60 28 L 60 24 Z" fill="#FF6B35"/>
+  
+  <!-- Fondo naranja (licor/miel) - parte inferior -->
+  <path d="M 25 30 C 25 31 28 33 30 48 C 34 50 42.5 50 55 48 C 57 33 60 31 60 30 L 60 24 L 25 24 Z" fill="#FF6B35"/>
+  
+  <!-- Contorno del vaso -->
+  <path d="M 25 8 L 60 8 L 60 28 C 60 29.8 50 30 42.5 30 C 35 30 25 29.8 25 28 M 25 30 C 25 31.8 28 35 30 48 C 34 50 42.5 50 55 48 C 57 35 60 31.8 60 30" 
+        fill="none" 
+        stroke="#FFFFFF" 
+        stroke-width="1.2" 
+        opacity="0.4"/>
+  
+  <!-- Capa superior blanca (crema) - parte ancha superior -->
+  <rect x="25" y="8" width="35" height="4" fill="#FFFFFF"/>
+  <ellipse cx="42.5" cy="12" rx="17.5" ry="2" fill="#FFFFFF"/>
+  
+  <!-- Centro negro (espresso) - línea recta horizontal que ocupa su porción del vaso -->
+  <rect x="25" y="12" width="35" height="12" fill="#1A1A1A"/>
+  
+  <!-- Reflejo del vidrio -->
+  <path d="M 32 9 C 32 20 33 28 42.5 30 C 52 28 53 20 53 9" stroke="#FFFFFF" stroke-width="0.8" opacity="0.2" fill="none"/>
+  
+  <!-- Texto Carajillo (en naranja) -->
+  <text x="75" y="28" 
+        font-family="Inter, -apple-system, sans-serif" 
+        font-size="20" 
+        font-weight="700" 
+        fill="#FF6B35" 
+        text-anchor="start" 
+        letter-spacing="-0.3px">Carajillo</text>
+  
+  <!-- Texto labs (en blanco, más pequeño) -->
+  <text x="75" y="42" 
+        font-family="Inter, -apple-system, sans-serif" 
+        font-size="14" 
+        font-weight="500" 
+        fill="#FFFFFF" 
+        text-anchor="start" 
+        letter-spacing="-0.2px">labs</text>
+  
+  <!-- Línea decorativa debajo del vaso -->
+  <path d="M 30 48 C 34 50 42.5 50 55 48" stroke="#FFFFFF" stroke-width="1.5" opacity="0.6" fill="none"/>
+</svg>

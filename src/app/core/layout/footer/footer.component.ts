@@ -8,9 +8,12 @@ import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
     <footer class="footer">
       <div class="footer-container">
         <p class="footer-text">
-          © {{ currentYear() }} <span class="highlight">Frinks & Smithers</span>
+          © {{ currentYear() }} <span class="highlight">Carajillolabs</span>
         </p>
         <p class="footer-subtext">
+          Un proyecto de <span class="secondary-text">Frinks & Smithers</span>
+        </p>
+        <p class="footer-subtext-small">
           Hecho con amor, café y alguna birra 🍺
         </p>
       </div>

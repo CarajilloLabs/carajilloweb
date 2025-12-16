@@ -11,7 +11,7 @@ import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
           © {{ currentYear() }} <span class="highlight">Carajillolabs</span>
         </p>
         <p class="footer-subtext">
-          Un proyecto de <span class="secondary-text">Frinks & Smithers</span>
+          Un proyecto de <span class="secondary-text">Frink & Smithers</span>
         </p>
         <p class="footer-subtext-small">
           Hecho con amor, café y alguna birra 🍺

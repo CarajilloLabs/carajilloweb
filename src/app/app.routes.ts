@@ -22,6 +22,11 @@ export const routes: Routes = [
     title: 'Política de Privacidad | Carajillolabs'
   },
   {
+    path: 'escaperoomlogger/deleteaccount',
+    loadComponent: () => import('./features/delete-account/delete-account.component').then(m => m.DeleteAccountComponent),
+    title: 'Eliminar Cuenta | Carajillolabs'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

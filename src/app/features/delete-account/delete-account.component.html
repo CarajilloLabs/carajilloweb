@@ -1,0 +1,127 @@
+<section class="delete-account-section">
+  <div class="delete-account-container">
+    <div class="delete-account-header fade-in-up">
+      <div class="icon-wrapper warning">
+        <i class="pi pi-exclamation-triangle"></i>
+      </div>
+      <h1 class="delete-account-title">
+        Eliminar <span class="gradient-text">Cuenta</span>
+      </h1>
+      <p class="delete-account-subtitle">
+        Esta acción no se puede deshacer. Por favor, lee la información a continuación antes de continuar.
+      </p>
+    </div>
+
+    @if (!isSubmitted()) {
+      <div class="delete-account-content fade-in-up delay-1">
+        <p-card class="warning-card">
+          <div class="card-content">
+            <h2>
+              <i class="pi pi-info-circle"></i>
+              Información importante
+            </h2>
+            <ul>
+              <li>Todos tus datos personales serán eliminados permanentemente.</li>
+              <li>No podrás recuperar tu cuenta ni tus datos después de la eliminación.</li>
+              <li>Esta acción es irreversible.</li>
+              <li>Si tienes suscripciones activas, estas también serán canceladas.</li>
+            </ul>
+          </div>
+        </p-card>
+
+        <p-card class="form-card">
+          <div class="card-content">
+            <form (ngSubmit)="onSubmit()" class="delete-form">
+              <div class="form-group">
+                <label for="email">
+                  Correo electrónico de la cuenta
+                  <span class="required">*</span>
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  pInputText
+                  [(ngModel)]="email"
+                  name="email"
+                  placeholder="tu@email.com"
+                  required
+                  [disabled]="isSubmitting()"
+                  class="form-input"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="reason">
+                  Motivo de la eliminación (opcional)
+                </label>
+                <textarea
+                  id="reason"
+                  [(ngModel)]="reason"
+                  name="reason"
+                  placeholder="Ayúdanos a mejorar. ¿Por qué decides eliminar tu cuenta?"
+                  rows="4"
+                  [disabled]="isSubmitting()"
+                  class="form-textarea"
+                ></textarea>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <p-checkbox
+                  [(ngModel)]="confirmed"
+                  name="confirmed"
+                  [binary]="true"
+                  inputId="confirm"
+                  [disabled]="isSubmitting()"
+                ></p-checkbox>
+                <label for="confirm" class="checkbox-label">
+                  Confirmo que he leído y entiendo que esta acción es <strong>irreversible</strong> y que todos mis datos serán eliminados permanentemente.
+                  <span class="required">*</span>
+                </label>
+              </div>
+
+              <div class="form-actions">
+                <p-button
+                  type="submit"
+                  label="Eliminar mi cuenta"
+                  icon="pi pi-trash"
+                  [disabled]="!email() || !confirmed() || isSubmitting()"
+                  [loading]="isSubmitting()"
+                  styleClass="delete-button"
+                />
+              </div>
+            </form>
+          </div>
+        </p-card>
+      </div>
+    } @else {
+      <div class="delete-account-content fade-in-up delay-1">
+        <p-card class="success-card">
+          <div class="card-content success-content">
+            <div class="icon-wrapper success">
+              <i class="pi pi-check-circle"></i>
+            </div>
+            <h2>Solicitud recibida</h2>
+            <p>
+              Hemos recibido tu solicitud de eliminación de cuenta. 
+              Te enviaremos un correo de confirmación a <strong>{{ email() }}</strong> 
+              para completar el proceso.
+            </p>
+            <p class="note">
+              Por favor, revisa tu bandeja de entrada y sigue las instrucciones del correo.
+            </p>
+            <div class="form-actions">
+              <p-button
+                label="Volver al inicio"
+                icon="pi pi-home"
+                (onClick)="reset()"
+                styleClass="custom-button"
+                routerLink="/"
+              />
+            </div>
+          </div>
+        </p-card>
+      </div>
+    }
+  </div>
+</section>
+

@@ -25,36 +25,50 @@ interface App {
   styleUrl: './apps.component.scss'
 })
 export class AppsComponent {
-  apps = signal<App[]>([
-    {
-      title: 'DojoTime',
-      description: 'Gestión completa para escuelas y dojos',
-      longDescription: 'Plataforma Flutter para escuelas y dojos que centraliza reservas, pases y horarios. Incluye autenticación con Firebase, gestión multi-tenant, deep links para invitaciones y controles remotos de versión para mantener la app siempre actualizada.',
-      technologies: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Remote Config', 'App Links'],
-      logo: 'assets/dojotime-logo.png',
-      status: 'development',
-      color: '#FF6B35'
-    },
-    {
-      title: 'EquiGasto',
-      description: 'Reparte gastos fácilmente con tus amigos',
-      longDescription: 'Aplicación Flutter para reparto de gastos similar a Splitwise, desarrollada siguiendo Clean Architecture. Incluye autenticación, gestión de grupos, gastos y sistema de deudas. Perfecta para viajes, pisos compartidos o cenas de grupo.',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'Clean Architecture'],
-      logo: 'assets/equigasto-logo.png',
-      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.sire.equigasto',
-      status: 'released',
-      color: '#FF6B35'
-    },
-    {
-      title: 'Escape Room Logger',
-      description: 'Gestiona y descubre Escape Rooms',
-      longDescription: 'Aplicación Flutter para gestionar y descubrir Escape Rooms. Incluye mapa interactivo con marcadores, sistema de valoraciones y reseñas, gestión de perfil de usuario, registro para empresas y soporte para tema claro y oscuro. Desarrollada con Clean Architecture y Material Design 3.',
-      technologies: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'Clean Architecture', 'GoRouter', 'Maps'],
-      logo: 'assets/escaperadar-logo.png',
-      status: 'development',
-      color: '#6366F1'
-    }
-  ]);
+  apps = signal<App[]>(this.getSortedApps());
+
+  private getSortedApps(): App[] {
+    const appsData: App[] = [
+      {
+        title: 'EquiGasto',
+        description: 'Reparte gastos fácilmente con tus amigos',
+        longDescription: 'Aplicación Flutter para reparto de gastos similar a Splitwise, desarrollada siguiendo Clean Architecture. Incluye autenticación, gestión de grupos, gastos y sistema de deudas. Perfecta para viajes, pisos compartidos o cenas de grupo.',
+        technologies: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'Clean Architecture'],
+        logo: 'assets/equigasto-logo.png',
+        playStoreUrl: 'https://play.google.com/store/apps/details?id=com.sire.equigasto',
+        status: 'released',
+        color: '#FF6B35'
+      },
+      {
+        title: 'DojoTime',
+        description: 'Gestión completa para escuelas y dojos',
+        longDescription: 'Plataforma Flutter para escuelas y dojos que centraliza reservas, pases y horarios. Incluye autenticación con Firebase, gestión multi-tenant, deep links para invitaciones y controles remotos de versión para mantener la app siempre actualizada.',
+        technologies: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Remote Config', 'App Links'],
+        logo: 'assets/dojotime-logo.png',
+        status: 'development',
+        color: '#FF6B35'
+      },
+      {
+        title: 'Escape Room Logger',
+        description: 'Gestiona y descubre Escape Rooms',
+        longDescription: 'Aplicación Flutter para gestionar y descubrir Escape Rooms. Incluye mapa interactivo con marcadores, sistema de valoraciones y reseñas, gestión de perfil de usuario, registro para empresas y soporte para tema claro y oscuro. Desarrollada con Clean Architecture y Material Design 3.',
+        technologies: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'Clean Architecture', 'GoRouter', 'Maps'],
+        logo: 'assets/escaperadar-logo.png',
+        status: 'development',
+        color: '#6366F1'
+      }
+    ];
+
+    return [...appsData].sort((a, b) => {
+      // Ordenar: primero 'released', luego 'development', luego 'coming-soon'
+      const statusOrder: Record<App['status'], number> = { 
+        'released': 0, 
+        'development': 1, 
+        'coming-soon': 2 
+      };
+      return (statusOrder[a.status] ?? 999) - (statusOrder[b.status] ?? 999);
+    });
+  }
 
   getStatusLabel(status: string): string {
     const labels: Record<string, string> = {

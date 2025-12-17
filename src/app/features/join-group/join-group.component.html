@@ -1,0 +1,55 @@
+<section class="join-section">
+  <div class="join-container">
+    <div class="join-card fade-in-up">
+      <div class="logo-section">
+        <img [src]="appConfig.logo" [alt]="appConfig.name" class="logo" />
+        <h1>{{ appConfig.name }}</h1>
+      </div>
+
+      <div class="content-section">
+        <h2>¡Únete al grupo!</h2>
+        <p class="description">
+          {{ appConfig.description }}
+        </p>
+
+        <div class="code-section">
+          <label>Código del grupo:</label>
+          <div class="code-display">
+            <code class="code-text">{{ groupId }}</code>
+            <p-button 
+              [icon]="copied ? 'pi pi-check' : 'pi pi-copy'"
+              [label]="copied ? 'Copiado' : 'Copiar'"
+              (onClick)="copyCode()"
+              [rounded]="true"
+              styleClass="copy-button" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <p-button 
+            label="Abrir en la app"
+            icon="pi pi-mobile"
+            (onClick)="tryOpenApp(true)"
+            [rounded]="true"
+            styleClass="custom-button-gradient" />
+          <p-button 
+            [label]="appConfig.installCta"
+            icon="pi pi-google"
+            (onClick)="openPlayStore()"
+            [rounded]="true"
+            styleClass="custom-button" />
+        </div>
+
+        <div class="instructions">
+          <h3>Instrucciones:</h3>
+          <ol>
+            <li>Si ya tienes {{ appConfig.name }} instalado, toca "Abrir en la app"</li>
+            <li>Si no tienes la app, instálala desde Google Play Store</li>
+            <li>Una vez instalada, abre la app y usa el código de arriba para unirte al grupo</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

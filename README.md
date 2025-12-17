@@ -26,6 +26,15 @@ Aplicación Flutter para reparto de gastos, perfecta para viajes y gastos compar
 - 🏗️ Clean Architecture
 - **Estado:** Disponible en Play Store
 
+### Escape Room Logger
+Aplicación Flutter para gestionar y descubrir Escape Rooms.
+- 🗺️ Mapa interactivo con marcadores
+- ⭐ Sistema de valoraciones y reseñas
+- 👤 Gestión de perfil de usuario
+- 🏢 Registro para empresas
+- 🌓 Tema claro y oscuro
+- **Estado:** En desarrollo
+
 ## 🛠️ Stack Tecnológico
 
 ### Frontend Web

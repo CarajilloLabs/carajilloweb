@@ -37,7 +37,7 @@ const APP_CONFIG: Record<AppType, AppConfig> = {
     name: 'Escape Room Logger',
     description: 'Has sido invitado a unirte a un grupo en Escape Room Logger.',
     logo: 'assets/escaperadar-logo.png',
-    playStoreUrl: '',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carajillolabs.erl',
     deepLinkScheme: 'escaperadar://groups/join/',
     installCta: 'Instalar Escape Room Logger'
   }
@@ -75,7 +75,7 @@ export class JoinGroupComponent implements OnInit {
     
     if (path.includes('/dojotime/')) {
       this.appConfig = APP_CONFIG.dojotime;
-    } else if (path.includes('/escaperadar/') || path.includes('/escaperoomlogger/')) {
+    } else if (path.includes('/escaperadar/') || path.includes('/escaperoomlogger/') || path.includes('/escape_room_logger/')) {
       this.appConfig = APP_CONFIG.escaperadar;
     } else {
       this.appConfig = APP_CONFIG.equigasto;

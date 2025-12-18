@@ -27,6 +27,11 @@ export const routes: Routes = [
     title: 'Unirse al grupo | EquiGasto'
   },
   {
+    path: 'escape_room_logger/join/:groupId',
+    loadComponent: () => import('./features/join-group/join-group.component').then(m => m.JoinGroupComponent),
+    title: 'Unirse al grupo | Escape Room Logger'
+  },
+  {
     path: 'escaperoomlogger/deleteaccount',
     loadComponent: () => import('./features/delete-account/delete-account.component').then(m => m.DeleteAccountComponent),
     title: 'Eliminar Cuenta | Carajillolabs'

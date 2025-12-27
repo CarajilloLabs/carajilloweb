@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sire.equigasto",
+      "sha256_cert_fingerprints": [
+        "7E:A1:F5:F9:48:EC:26:E0:02:43:69:6F:F2:7A:EE:84:A0:C3:C7:41:0A:0D:C3:20:85:5F:63:5B:E2:AA:F9:7E"
+      ]
+    }
+  }
+]
+

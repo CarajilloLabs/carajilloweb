@@ -32,7 +32,7 @@ export class AppsComponent {
       {
         title: 'EquiGasto',
         description: 'Reparte gastos fácilmente con tus amigos',
-        longDescription: 'Aplicación Flutter para reparto de gastos similar a Splitwise, desarrollada siguiendo Clean Architecture. Incluye autenticación, gestión de grupos, gastos y sistema de deudas. Perfecta para viajes, pisos compartidos o cenas de grupo.',
+        longDescription: 'Aplicación Flutter para reparto de gastos similar a Splitwise, desarrollada siguiendo Clean Architecture. Incluye autenticación, gestión de grupos, gastos y sistema de deudas. Perfecta para viajes, pisos compartidos o cenas de grupo. Cuentas claras, amigos para siempre.',
         technologies: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'Clean Architecture'],
         logo: 'assets/equigasto-logo.png',
         playStoreUrl: 'https://play.google.com/store/apps/details?id=com.sire.equigasto',

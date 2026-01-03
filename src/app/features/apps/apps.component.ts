@@ -54,7 +54,8 @@ export class AppsComponent {
         longDescription: 'Aplicación Flutter para gestionar y descubrir Escape Rooms. Incluye mapa interactivo con marcadores, sistema de valoraciones y reseñas, gestión de perfil de usuario, registro para empresas y soporte para tema claro y oscuro. Desarrollada con Clean Architecture y Material Design 3.',
         technologies: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'Clean Architecture', 'GoRouter', 'Maps'],
         logo: 'assets/escaperadar-logo.png',
-        status: 'development',
+        playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carajillolabs.erl',
+        status: 'released',
         color: '#6366F1'
       }
     ];

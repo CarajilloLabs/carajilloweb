@@ -36,6 +36,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/_redirects",
+              "src/app-ads.txt",
               {
                 "glob": "**/*",
                 "input": "src/.well-known",

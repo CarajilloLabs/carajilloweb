@@ -133,8 +133,8 @@
   // Mejorar visibilidad de logos oscuros
   filter: brightness(1.1) contrast(1.1);
   
-  // Para DojoTime específicamente, si es necesario más contraste
-  &[alt*="DojoTime"] {
+  // Para Ullr específicamente, si es necesario más contraste
+  &[alt*="Ullr"] {
     background: rgba(255, 255, 255, 1);
     padding: 0.4rem;
     filter: brightness(1.2) contrast(1.15);

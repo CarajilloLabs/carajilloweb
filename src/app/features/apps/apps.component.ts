@@ -40,11 +40,11 @@ export class AppsComponent {
         color: '#FF6B35'
       },
       {
-        title: 'DojoTime',
+        title: 'Ullr',
         description: 'Gestión completa para escuelas y dojos',
         longDescription: 'Plataforma Flutter para escuelas y dojos que centraliza reservas, pases y horarios. Incluye autenticación con Firebase, gestión multi-tenant, deep links para invitaciones y controles remotos de versión para mantener la app siempre actualizada.',
         technologies: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Remote Config', 'App Links'],
-        logo: 'assets/dojotime-logo.png',
+        logo: 'assets/ullr-logo.png',
         status: 'development',
         color: '#FF6B35'
       },

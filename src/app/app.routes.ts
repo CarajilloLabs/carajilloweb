@@ -37,6 +37,16 @@ export const routes: Routes = [
     title: 'Eliminar Cuenta | Carajillolabs'
   },
   {
+    path: 'ullr/deleteaccount',
+    loadComponent: () => import('./features/delete-account/delete-account.component').then(m => m.DeleteAccountComponent),
+    title: 'Eliminar Cuenta | Carajillolabs'
+  },
+  {
+    path: 'ejercitia/deleteaccount',
+    loadComponent: () => import('./features/delete-account/delete-account.component').then(m => m.DeleteAccountComponent),
+    title: 'Eliminar Cuenta | Carajillolabs'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

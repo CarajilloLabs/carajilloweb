@@ -2,7 +2,20 @@
   publish = "dist/frinks-smithers-web/browser"
   command = "npm run build"
 
-# Servir el archivo assetlinks.json para verificación de App Links
+# Headers para archivos de verificación de deep links
+[[headers]]
+  for = "/.well-known/assetlinks.json"
+  [headers.values]
+    Content-Type = "application/json"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/.well-known/apple-app-site-association"
+  [headers.values]
+    Content-Type = "application/json"
+    Access-Control-Allow-Origin = "*"
+
+# Servir archivos .well-known para verificación de App Links (Android e iOS)
 [[redirects]]
   from = "/.well-known/*"
   to = "/.well-known/:splat"

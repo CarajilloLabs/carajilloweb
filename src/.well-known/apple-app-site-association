@@ -1,0 +1,22 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "92T5X23C86.com.sire.equigasto"
+        ],
+        "components": [
+          {
+            "/": "/equigasto/join/*",
+            "comment": "Matches all EquiGasto join group links"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "92T5X23C86.com.sire.equigasto"
+    ]
+  }
+}

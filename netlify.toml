@@ -15,10 +15,23 @@
     Content-Type = "application/json"
     Access-Control-Allow-Origin = "*"
 
+[[headers]]
+  for = "/app-ads.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+    Access-Control-Allow-Origin = "*"
+
 # Servir archivos .well-known para verificación de App Links (Android e iOS)
 [[redirects]]
   from = "/.well-known/*"
   to = "/.well-known/:splat"
+  status = 200
+  force = true
+
+# Servir app-ads.txt directamente (necesario para Apple App Store)
+[[redirects]]
+  from = "/app-ads.txt"
+  to = "/app-ads.txt"
   status = 200
   force = true
 

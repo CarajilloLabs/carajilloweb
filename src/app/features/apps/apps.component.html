@@ -41,18 +41,30 @@
 
             <ng-template pTemplate="footer">
               <div class="app-actions">
-                @if (app.playStoreUrl) {
-                  <p-button 
-                    label="Ver en Play Store" 
-                    icon="pi pi-android"
-                    (onClick)="openLink(app.playStoreUrl)"
-                    [rounded]="true"
-                    styleClass="app-button" />
+                @if (app.playStoreUrl || app.appStoreUrl) {
+                  <div class="store-buttons">
+                    @if (app.playStoreUrl) {
+                      <p-button 
+                        label="Play Store" 
+                        icon="pi pi-android"
+                        (onClick)="openLink(app.playStoreUrl!)"
+                        [rounded]="true"
+                        styleClass="app-button" />
+                    }
+                    @if (app.appStoreUrl) {
+                      <p-button 
+                        label="App Store" 
+                        icon="pi pi-apple"
+                        (onClick)="openLink(app.appStoreUrl!)"
+                        [rounded]="true"
+                        styleClass="app-button" />
+                    }
+                  </div>
                 } @else if (app.externalUrl) {
                   <p-button 
                     label="Visitar sitio" 
                     icon="pi pi-external-link"
-                    (onClick)="openLink(app.externalUrl)"
+                    (onClick)="openLink(app.externalUrl!)"
                     [rounded]="true"
                     styleClass="app-button" />
                 } @else {

@@ -11,6 +11,7 @@ interface App {
   technologies: string[];
   logo: string;
   playStoreUrl?: string;
+  appStoreUrl?: string;
   externalUrl?: string;
   status: 'released' | 'development' | 'coming-soon';
   color: string;
@@ -36,6 +37,7 @@ export class AppsComponent {
         technologies: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'Clean Architecture'],
         logo: 'assets/equigasto-logo.png',
         playStoreUrl: 'https://play.google.com/store/apps/details?id=com.sire.equigasto',
+        appStoreUrl: 'https://apps.apple.com/es/app/equigasto/id6757721713',
         status: 'released',
         color: '#FF6B35'
       },

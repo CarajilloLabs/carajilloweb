@@ -11,6 +11,18 @@
         "7E:A1:F5:F9:48:EC:26:E0:02:43:69:6F:F2:7A:EE:84:A0:C3:C7:41:0A:0D:C3:20:85:5F:63:5B:E2:AA:F9:7E"
       ]
     }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.carajillolabs.erl",
+      "sha256_cert_fingerprints": [
+        "53:A0:83:5E:BB:D1:C2:B9:3B:66:B9:30:A9:77:90:8B:B5:27:CF:E2:C5:85:65:78:BC:5B:97:13:11:2E:1E:97"
+      ]
+    }
   }
 ]
 

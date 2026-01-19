@@ -11,12 +11,24 @@
             "comment": "Matches all EquiGasto join group links"
           }
         ]
+      },
+      {
+        "appIDs": [
+          "92T5X23C86.com.carajillolabs.erl"
+        ],
+        "components": [
+          {
+            "/": "/escape_room_logger/join/*",
+            "comment": "Matches all Escape Room Logger join group links"
+          }
+        ]
       }
     ]
   },
   "webcredentials": {
     "apps": [
-      "92T5X23C86.com.sire.equigasto"
+      "92T5X23C86.com.sire.equigasto",
+      "92T5X23C86.com.carajillolabs.erl"
     ]
   }
 }

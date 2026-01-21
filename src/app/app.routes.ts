@@ -17,6 +17,11 @@ export const routes: Routes = [
     title: 'Sobre Nosotros | Carajillolabs'
   },
   {
+    path: 'contact',
+    loadComponent: () => import('./features/contact/contact.component').then(m => m.ContactComponent),
+    title: 'Contacto | Carajillolabs'
+  },
+  {
     path: 'privacy',
     loadComponent: () => import('./features/privacy/privacy.component').then(m => m.PrivacyComponent),
     title: 'Política de Privacidad | Carajillolabs'

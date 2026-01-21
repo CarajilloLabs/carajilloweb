@@ -1,0 +1,181 @@
+.contact-section {
+  min-height: calc(100vh - 200px);
+  padding: 3rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 4rem 2rem;
+  }
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+
+  @media (min-width: 768px) {
+    font-size: 3.5rem;
+  }
+}
+
+// .gradient-text ahora está definida globalmente en styles.scss
+
+.contact-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.6;
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.form-wrapper {
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+::ng-deep {
+  .contact-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 20px !important;
+    transition: all 0.3s ease !important;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border-color: rgba(255, 107, 53, 0.3) !important;
+    }
+
+    .p-card-body {
+      padding: 2rem !important;
+
+      @media (min-width: 768px) {
+        padding: 3rem !important;
+      }
+    }
+
+    .p-card-content {
+      padding: 0 !important;
+    }
+  }
+}
+
+.card-content {
+  .icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FF6B35;
+    border-radius: 12px;
+    
+    i {
+      font-size: 1.75rem;
+      color: #fff;
+    }
+  }
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+
+  label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+  }
+
+  ::ng-deep {
+    .p-inputtext,
+    textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 12px !important;
+      padding: 0.75rem 1rem !important;
+      color: #fff !important;
+      font-size: 1rem !important;
+      transition: all 0.3s ease !important;
+
+      &:focus {
+        border-color: #FF6B35 !important;
+        box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2) !important;
+        outline: none !important;
+      }
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.4) !important;
+      }
+
+      &.ng-invalid.ng-touched {
+        border-color: rgba(255, 107, 53, 0.6) !important;
+      }
+
+      &.ng-valid.ng-touched {
+        border-color: rgba(76, 175, 80, 0.6) !important;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+  }
+
+  .error-message {
+    display: block;
+    color: #FF6B35;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.success-message {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(76, 175, 80, 0.1);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: 12px;
+  animation: fadeInUp 0.5s ease forwards;
+
+  i {
+    font-size: 3rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #4CAF50;
+    margin: 0;
+  }
+}
+
+// Animación fade-in-up y delay-1 ahora están definidas globalmente en styles.scss

@@ -53,17 +53,7 @@
   }
 }
 
-.gradient-text {
-  color: #FF6B35;
-  font-weight: 800;
-}
-
-.secondary-brand {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.9em;
-  font-weight: 400;
-  font-style: italic;
-}
+// .gradient-text y .secondary-brand ahora están definidas globalmente en styles.scss
 
 .hero-subtitle {
   font-size: 1.25rem;
@@ -211,39 +201,6 @@
   i {
     font-size: 1.75rem;
     color: #fff;
-  }
-}
-
-// Animations
-.fade-in-up {
-  animation: fadeInUp 0.8s ease forwards;
-  opacity: 0;
-}
-
-.delay-1 {
-  animation-delay: 0.15s;
-}
-
-.delay-2 {
-  animation-delay: 0.3s;
-}
-
-.delay-3 {
-  animation-delay: 0.45s;
-}
-
-.delay-4 {
-  animation-delay: 0.6s;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

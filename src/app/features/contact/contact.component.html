@@ -1,0 +1,93 @@
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-header fade-in-up">
+      <h1 class="contact-title">
+        <span class="gradient-text">Contacto</span>
+      </h1>
+      <p class="contact-subtitle">
+        ¿Tienes alguna pregunta o sugerencia? Estamos aquí para ayudarte.
+      </p>
+    </div>
+
+    <div class="form-wrapper fade-in-up delay-1">
+      <p-card class="contact-card">
+        <div class="card-content">
+          <div class="icon-wrapper">
+            <i class="pi pi-envelope"></i>
+          </div>
+
+          <div *ngIf="showSuccessMessage" class="success-message fade-in-up">
+            <i class="pi pi-check-circle"></i>
+            <p>Mensaje enviado correctamente</p>
+          </div>
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!showSuccessMessage">
+            <div class="form-group">
+              <label for="name">Nombre *</label>
+              <input
+                id="name"
+                type="text"
+                pInputText
+                formControlName="name"
+                placeholder="Tu nombre"
+                [class.ng-invalid]="name?.invalid && name?.touched"
+                [class.ng-valid]="name?.valid && name?.touched"
+              />
+              <small *ngIf="name?.invalid && name?.touched" class="error-message">
+                <span *ngIf="name?.errors?.['required']">El nombre es requerido</span>
+                <span *ngIf="name?.errors?.['minlength']">El nombre debe tener al menos 2 caracteres</span>
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input
+                id="email"
+                type="email"
+                pInputText
+                formControlName="email"
+                placeholder="tu@email.com"
+                [class.ng-invalid]="email?.invalid && email?.touched"
+                [class.ng-valid]="email?.valid && email?.touched"
+              />
+              <small *ngIf="email?.invalid && email?.touched" class="error-message">
+                <span *ngIf="email?.errors?.['required']">El email es requerido</span>
+                <span *ngIf="email?.errors?.['email']">Ingresa un email válido</span>
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Mensaje *</label>
+              <textarea
+                id="message"
+                
+                formControlName="message"
+                placeholder="Escribe tu mensaje aquí..."
+                rows="6"
+                [class.ng-invalid]="message?.invalid && message?.touched"
+                [class.ng-valid]="message?.valid && message?.touched"
+              ></textarea>
+              <small *ngIf="message?.invalid && message?.touched" class="error-message">
+                <span *ngIf="message?.errors?.['required']">El mensaje es requerido</span>
+                <span *ngIf="message?.errors?.['minlength']">El mensaje debe tener al menos 10 caracteres</span>
+              </small>
+            </div>
+
+            <div class="form-actions">
+              <p-button
+                label="Enviar mensaje"
+                icon="pi pi-send"
+                iconPos="right"
+                type="submit"
+                [disabled]="contactForm.invalid || submitted"
+                [loading]="submitted"
+                styleClass="custom-button-gradient"
+                [rounded]="true"
+              />
+            </div>
+          </form>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</section>

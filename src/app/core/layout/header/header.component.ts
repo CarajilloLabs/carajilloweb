@@ -23,6 +23,9 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
           <a routerLink="/about" routerLinkActive="active" class="nav-link">
             Sobre Nosotros
           </a>
+          <a routerLink="/contact" routerLinkActive="active" class="nav-link">
+            Contacto
+          </a>
         </nav>
       </div>
     </header>

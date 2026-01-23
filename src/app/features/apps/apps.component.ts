@@ -57,6 +57,7 @@ export class AppsComponent {
         technologies: ['Flutter', 'Dart', 'Firebase', 'Riverpod', 'Clean Architecture', 'GoRouter', 'Maps'],
         logo: 'assets/escaperadar-logo.png',
         playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carajillolabs.erl',
+        appStoreUrl: 'https://apps.apple.com/es/app/escape-room-logger/id6758017169',
         status: 'released',
         color: '#6366F1'
       }

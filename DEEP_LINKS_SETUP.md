@@ -213,7 +213,7 @@ func application(_ application: UIApplication,
 
 ## ℹ️ Otras Aplicaciones
 
-Si necesitas configurar enlaces profundos para tus otras aplicaciones (DojoTime, EscapeRadar), deberás:
+Si necesitas configurar enlaces profundos para tus otras aplicaciones (Ullr, EscapeRadar), deberás:
 
 1. Añadir sus configuraciones al archivo `assetlinks.json`
 2. Asegurarte de que sus `AndroidManifest.xml` también estén configurados correctamente
@@ -234,8 +234,8 @@ Ejemplo para múltiples apps:
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.sire.dojotime",
-      "sha256_cert_fingerprints": ["TU_SHA256_DOJOTIME"]
+      "package_name": "com.carajillolabs.ullr",
+      "sha256_cert_fingerprints": ["TU_SHA256_ULLR"]
     }
   },
   {

@@ -47,6 +47,7 @@
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-bottom: 4rem;
+  align-items: stretch;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
@@ -62,6 +63,8 @@
 .app-card-wrapper {
   animation: fadeInUp 0.8s ease forwards;
   opacity: 0;
+  display: flex;
+  height: 100%;
 
   &:nth-child(2) {
     animation-delay: 0.15s;
@@ -147,6 +150,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  flex: 1;
+  min-height: 0;
 }
 
 .app-title {
@@ -168,6 +173,7 @@
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   margin: 0;
+  flex: 1;
 }
 
 .app-technologies {
@@ -200,6 +206,8 @@
   padding: 1.25rem 1.5rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 80px;
 }
 
 .store-buttons {
@@ -207,12 +215,14 @@
   gap: 0.75rem;
   width: 100%;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 
   ::ng-deep .app-button {
     flex: 1;
     min-width: 140px;
     max-width: 200px;
+    height: 42px;
   }
 }
 

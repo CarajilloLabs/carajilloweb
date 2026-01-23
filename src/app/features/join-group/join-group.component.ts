@@ -5,7 +5,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 
-type AppType = 'equigasto' | 'dojotime' | 'escaperadar';
+type AppType = 'equigasto' | 'ullr' | 'escaperadar';
 
 interface AppConfig {
   name: string;
@@ -25,13 +25,13 @@ const APP_CONFIG: Record<AppType, AppConfig> = {
     deepLinkScheme: 'equigasto://app/join/',
     installCta: 'Instalar EquiGasto'
   },
-  dojotime: {
-    name: 'DojoTime',
-    description: 'Has sido invitado a unirte al dojo en DojoTime.',
-    logo: 'assets/dojotime-logo.png',
-    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.sire.dojotime',
-    deepLinkScheme: 'dojotime://app/join/',
-    installCta: 'Instalar DojoTime'
+  ullr: {
+    name: 'Ullr',
+    description: 'Has sido invitado a unirte al dojo en Ullr.',
+    logo: 'assets/ullr-logo.png',
+        playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carajillolabs.ullr',
+    deepLinkScheme: 'ullr://app/join/',
+    installCta: 'Instalar Ullr'
   },
   escaperadar: {
     name: 'Escape Room Logger',
@@ -73,8 +73,8 @@ export class JoinGroupComponent implements OnInit {
   private resolveAppConfig() {
     const path = window.location.pathname;
     
-    if (path.includes('/dojotime/')) {
-      this.appConfig = APP_CONFIG.dojotime;
+    if (path.includes('/ullr/')) {
+      this.appConfig = APP_CONFIG.ullr;
     } else if (path.includes('/escaperadar/') || path.includes('/escaperoomlogger/') || path.includes('/escape_room_logger/')) {
       this.appConfig = APP_CONFIG.escaperadar;
     } else {

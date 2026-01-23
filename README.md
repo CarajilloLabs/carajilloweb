@@ -10,7 +10,7 @@ Sin oficinas corporativas, sin jerarquías absurdas. Solo código limpio, buenas
 
 ## 📱 Nuestras Apps
 
-### DojoTime
+### Ullr
 Plataforma Flutter para escuelas y dojos que centraliza reservas, pases y horarios.
 - 🔐 Autenticación con Firebase
 - 🏢 Gestión multi-tenant

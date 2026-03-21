@@ -57,6 +57,11 @@ export const routes: Routes = [
     title: 'Eliminar Cuenta | Carajillolabs'
   },
   {
+    path: 'escape_room_logger/escape-room/:roomId',
+    loadComponent: () => import('./features/share-room/share-room.component').then(m => m.ShareRoomComponent),
+    title: 'Ver Sala | Escape Room Logger'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

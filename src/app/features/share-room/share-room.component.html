@@ -1,0 +1,41 @@
+<section class="join-section">
+  <div class="join-container">
+    <div class="join-card fade-in-up">
+      <div class="logo-section">
+        <img [src]="appConfig.logo" [alt]="appConfig.name" class="logo" />
+        <h1>{{ appConfig.name }}</h1>
+      </div>
+
+      <div class="content-section">
+        <h2>¡Descubre esta sala!</h2>
+        <p class="description">
+          {{ appConfig.description }}
+        </p>
+
+        <div class="actions">
+          <p-button
+            label="Ver sala en la app"
+            icon="pi pi-mobile"
+            (onClick)="tryOpenApp(true)"
+            [rounded]="true"
+            styleClass="custom-button-gradient" />
+          <p-button
+            [label]="appConfig.installCta"
+            icon="pi pi-google"
+            (onClick)="openPlayStore()"
+            [rounded]="true"
+            styleClass="custom-button" />
+        </div>
+
+        <div class="instructions">
+          <h3>Instrucciones:</h3>
+          <ol>
+            <li>Si ya tienes {{ appConfig.name }} instalado, toca "Ver sala en la app"</li>
+            <li>Si no tienes la app, instálala primero desde tu tienda</li>
+            <li>Una vez instalada, vuelve a pulsar el enlace o toca en "Ver sala en la app" para abrirla directamente</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

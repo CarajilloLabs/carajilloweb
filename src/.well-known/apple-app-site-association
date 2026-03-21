@@ -20,6 +20,10 @@
           {
             "/": "/escape_room_logger/join/*",
             "comment": "Matches all Escape Room Logger join group links"
+          },
+          {
+            "/": "/escape_room_logger/escape-room/*",
+            "comment": "Matches all Escape Room Logger share room links"
           }
         ]
       }

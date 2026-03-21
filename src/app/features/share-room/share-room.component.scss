@@ -1,7 +1,5 @@
-@import '../../../styles.scss';
-
 .join-section {
-  min-height: calc(100vh - 80px); /* Ajusta según el height de tu navbar */
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;

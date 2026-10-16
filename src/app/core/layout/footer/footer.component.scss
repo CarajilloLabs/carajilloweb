@@ -45,3 +45,30 @@
   margin: 0.5rem 0 0 0;
 }
 
+
+// Enlaces legales: tienen que estar accesibles desde cualquier página, tanto
+// por obligación de información como porque las tiendas de apps los piden.
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.footer-legal-link {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #FF6B35;
+  }
+}
+
+.footer-legal-sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.85rem;
+}

@@ -1,94 +1,340 @@
-<section class="privacy-section">
-  <div class="privacy-container">
-    <header class="privacy-header fade-in-up">
-      <h1 class="privacy-title">
+<!--
+  Política de privacidad.
+
+  La versión (LEGAL_VERSION, en shared/legal-version.ts) es la misma que la API
+  de Escape Room Logger guarda con cada consentimiento. Si se cambia el texto,
+  hay que subir la versión aquí y en la variable PRIVACY_POLICY_VERSION del
+  backend, o la prueba del consentimiento dejará de corresponderse con lo que
+  la gente aceptó.
+
+  PENDIENTE DE CONFIRMAR por el responsable (ver PRIVACIDAD-PENDIENTE.md en el
+  repositorio escape-room-logger-api):
+    * Identificación fiscal y domicilio, si se quiere ir más allá del nombre
+      comercial y el correo de contacto.
+    * Nombre del proveedor de alojamiento en el apartado 8, hoy sin concretar.
+    * Los plazos del apartado 7 son los que aplica hoy el backend salvo dos:
+      la eliminación de cuentas inactivas a los 24 meses y la retención de 12
+      meses de los registros técnicos todavía no están implementadas (por eso
+      el texto dice «podemos eliminar» y no «eliminamos»). Están anotadas en
+      PRIVACIDAD-PENDIENTE.md para implementarlas o ajustar el texto.
+-->
+<section class="legal-section">
+  <div class="legal-container">
+
+    <header class="legal-header fade-in-up">
+      <h1 class="legal-title">
         Política de <span class="gradient-text">Privacidad</span>
       </h1>
-      <p class="privacy-date">Última actualización: {{ today | date:"d 'de' MMMM 'de' y" }}</p>
+      <p class="legal-meta">Última actualización: {{ lastUpdated }}</p>
+      <span class="legal-version">Versión {{ version }}</span>
     </header>
 
-    <article class="privacy-card fade-in-up delay-1">
+    <article class="legal-card fade-in-up delay-1">
       <h2>1. Introducción</h2>
       <p>
         Esta política describe cómo tratamos los datos personales en nuestras aplicaciones móviles dirigidas a
         usuarios en España, cumpliendo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica
         de Protección de Datos y Garantía de Derechos Digitales (LOPDGDD).
       </p>
+      <p>
+        Se aplica a <strong>Escape Room Logger</strong>, <strong>EquiGasto</strong> y <strong>Ullr</strong>, y a
+        esta web. Cuando algo afecta solo a una de ellas se indica expresamente: es el caso del apartado 5, sobre
+        las imágenes que suben las personas usuarias de Escape Room Logger.
+      </p>
+      <p>
+        Al usar nuestras aplicaciones aceptas también los
+        <a routerLink="/terms">términos y condiciones</a>.
+      </p>
     </article>
 
-    <article class="privacy-card fade-in-up delay-2">
+    <article class="legal-card fade-in-up delay-2">
       <h2>2. Responsable del tratamiento</h2>
       <p>
-        El responsable del tratamiento es <strong>Carajillolabs</strong>, un proyecto de <span class="secondary-brand">Frink & Smithers</span>, 
-        con correo de contacto <a href="mailto:hola@carajillolabs.com">hola@carajillolabs.com</a>.
+        El responsable del tratamiento es <strong>Carajillolabs</strong>, un proyecto de
+        <span class="secondary-brand">Frink &amp; Smithers</span>, con correo de contacto
+        <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>.
+      </p>
+      <p>
+        Puedes dirigirte a esa misma dirección para cualquier cuestión sobre esta política o para ejercer tus
+        derechos (apartado 9).
       </p>
     </article>
 
-    <article class="privacy-card fade-in-up delay-3">
-      <h2>3. Datos que recopilamos</h2>
+    <article class="legal-card fade-in-up delay-3">
+      <h2>3. Datos que tratamos</h2>
       <ul>
-        <li>Datos de identificación básicos (nombre, alias, foto opcional).</li>
-        <li>Datos de contacto (correo electrónico, teléfono opcional).</li>
-        <li>Datos de uso de la aplicación (acciones realizadas, estadísticas y registros de errores).</li>
-        <li>Datos derivados del dispositivo (modelo, sistema operativo, idioma, zona horaria).</li>
+        <li>Datos de identificación básicos: nombre o alias y foto de perfil, que es opcional.</li>
+        <li>Correo electrónico, que además identifica tu cuenta.</li>
+        <li>
+          <strong>Fecha de nacimiento</strong>, únicamente para comprobar la edad mínima (apartado 6). Guardamos la
+          fecha y no la edad para no tener que volver a preguntártela.
+        </li>
+        <li>
+          Contenido que creas en la aplicación: en Escape Room Logger, tus visitas a salas, tiempos, notas
+          personales, reseñas, listas de deseados, grupos y logros.
+        </li>
+        <li>
+          <strong>Imágenes que subes</strong>: foto de perfil y fotos de recuerdo de tus partidas (apartado 5).
+        </li>
+        <li>
+          Registro de tus consentimientos: qué aceptaste, en qué versión de estos documentos, cuándo, y la
+          dirección IP y el navegador o dispositivo desde el que lo hiciste. Lo conservamos solo como prueba de la
+          aceptación, tal y como exige el artículo 7.1 del RGPD, y no lo usamos para ninguna otra finalidad.
+        </li>
+        <li>Datos de uso y registros técnicos de errores, necesarios para mantener el servicio.</li>
       </ul>
+      <p>
+        <strong>No tratamos categorías especiales de datos</strong> (salud, ideología, biometría…) ni hacemos
+        elaboración de perfiles con efectos jurídicos. No usamos reconocimiento facial ni etiquetamos a personas
+        en las fotos.
+      </p>
     </article>
 
-    <article class="privacy-card fade-in-up delay-4">
-      <h2>4. Finalidades y legitimación</h2>
+    <article class="legal-card fade-in-up delay-4">
+      <h2>4. Finalidades y bases jurídicas</h2>
+      <div class="legal-table-wrapper">
+        <table class="legal-table">
+          <thead>
+            <tr>
+              <th>Para qué</th>
+              <th>Base jurídica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Crear y mantener tu cuenta, y autenticarte</td>
+              <td>Ejecución del contrato (art. 6.1.b)</td>
+            </tr>
+            <tr>
+              <td>Prestar el servicio: bitácora de visitas, reseñas, grupos y logros</td>
+              <td>Ejecución del contrato (art. 6.1.b)</td>
+            </tr>
+            <tr>
+              <td>Mostrar tu foto de perfil</td>
+              <td>Tu consentimiento (art. 6.1.a), revocable</td>
+            </tr>
+            <tr>
+              <td>Alojar y mostrarte las fotos de recuerdo que subes</td>
+              <td>Tu consentimiento (art. 6.1.a), revocable</td>
+            </tr>
+            <tr>
+              <td>Comprobar la edad mínima</td>
+              <td>Obligación legal (art. 6.1.c y art. 8 RGPD)</td>
+            </tr>
+            <tr>
+              <td>Atender denuncias y retirar contenido</td>
+              <td>Obligación legal e interés legítimo (art. 6.1.c y f)</td>
+            </tr>
+            <tr>
+              <td>Soporte, seguridad y prevención de abusos</td>
+              <td>Interés legítimo (art. 6.1.f)</td>
+            </tr>
+            <tr>
+              <td>Mejora del producto mediante datos agregados</td>
+              <td>Interés legítimo (art. 6.1.f)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Cuando la base es el consentimiento, puedes retirarlo en cualquier momento desde la propia aplicación, sin
+        que ello afecte a la licitud del tratamiento anterior. Retirarlo impide subir contenido nuevo; para que
+        desaparezca lo ya subido, bórralo o elimina tu cuenta (apartado 9).
+      </p>
+    </article>
+
+    <article class="legal-card highlight fade-in-up delay-5">
+      <h2>5. Fotos e imágenes (Escape Room Logger)</h2>
+      <p>
+        Escape Room Logger permite subir una foto de perfil y hasta cinco fotos de recuerdo por partida. Como en
+        esas fotos suele aparecer más gente, lo tratamos con especial cuidado.
+      </p>
+
+      <h3>Qué hacemos con la imagen al subirla</h3>
       <ul>
-        <li>Prestación del servicio solicitado: ejecución de un contrato.</li>
-        <li>Atención al cliente y soporte técnico: interés legítimo.</li>
-        <li>Mejora continua y analítica: interés legítimo con datos agregados.</li>
-        <li>Comunicaciones comerciales propias: consentimiento revocable.</li>
+        <li>
+          <strong>Le quitamos los metadatos.</strong> Las fotos de móvil llevan incrustados, entre otras cosas, las
+          <strong>coordenadas GPS</strong> del lugar donde se tomaron, la fecha exacta y el modelo del dispositivo.
+          Al recibirla la reprocesamos, de modo que esa información <strong>no se almacena ni se publica</strong>.
+        </li>
+        <li>Reducimos su tamaño: no conservamos más resolución de la que la aplicación necesita.</li>
+        <li>Comprobamos que es realmente una imagen y no otro tipo de fichero.</li>
       </ul>
-    </article>
 
-    <article class="privacy-card fade-in-up delay-5">
-      <h2>5. Conservación</h2>
-      <p>
-        Conservamos los datos mientras exista una cuenta activa o sea necesario para fines legales. Eliminamos o
-        anonimizamos la información cuando deja de ser necesaria.
-      </p>
-    </article>
-
-    <article class="privacy-card fade-in-up delay-6">
-      <h2>6. Destinatarios y transferencias</h2>
-      <p>
-        Compartimos datos únicamente con proveedores que actúan como encargados del tratamiento (alojamiento, analítica,
-        mensajería) mediante contratos que garantizan la confidencialidad y la seguridad. Si hubiera transferencias
-        internacionales, estarán amparadas por decisiones de adecuación o cláusulas contractuales tipo.
-      </p>
-    </article>
-
-    <article class="privacy-card fade-in-up delay-7">
-      <h2>7. Derechos de las personas usuarias</h2>
-      <p>Tienes derecho a:</p>
+      <h3>Quién puede verla</h3>
       <ul>
-        <li>Acceder, rectificar o solicitar la supresión de tus datos.</li>
-        <li>Solicitar la limitación u oposición al tratamiento.</li>
-        <li>Solicitar la portabilidad de tus datos en un formato interoperable.</li>
-        <li>Retirar tu consentimiento en cualquier momento.</li>
-        <li>Presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es).</li>
+        <li>
+          Tus <strong>fotos de recuerdo</strong> son privadas: solo tú las ves desde tu cuenta. No son accesibles
+          con un enlace público.
+        </li>
+        <li>
+          Tu <strong>foto de perfil</strong> aparece junto a tus reseñas. Las fichas de las salas y sus reseñas son
+          públicas, así que ten en cuenta que esa foto y tu nombre pueden verlos personas sin cuenta. Si prefieres
+          no mostrarla, no subas foto de perfil o bórrala desde la aplicación.
+        </li>
+        <li>
+          Las imágenes se sirven mediante <strong>enlaces temporales que caducan</strong>; no quedan accesibles de
+          forma permanente ni son indexables por buscadores.
+        </li>
       </ul>
-      <p>Para ejercerlos, escríbenos a <a href="mailto:hola@carajillolabs.com">hola@carajillolabs.com</a> adjuntando un documento que acredite tu identidad.</p>
-    </article>
 
-    <article class="privacy-card fade-in-up delay-8">
-      <h2>8. Seguridad</h2>
+      <h3>Si apareces en una foto que no subiste tú</h3>
       <p>
-        Aplicamos medidas técnicas y organizativas como cifrado en tránsito, controles de acceso, copias de respaldo y
-        auditorías periódicas para proteger la información frente a accesos no autorizados o pérdida.
+        Quien sube una imagen declara que tiene permiso de las personas identificables que aparecen en ella, tal y
+        como recogen los <a routerLink="/terms">términos y condiciones</a>. Aun así, <strong>no necesitas tener
+        cuenta ni haber aceptado nada</strong> para pedir que una imagen tuya se retire:
+      </p>
+      <ul>
+        <li>
+          Escríbenos a <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a> indicando dónde aparece la
+          imagen. Retiramos el contenido sin coste y sin pedirte que justifiques el motivo.
+        </li>
+        <li>
+          Si tienes la aplicación, puedes denunciar la foto directamente desde ella y se tramita por el mismo
+          canal.
+        </li>
+      </ul>
+      <p>
+        Cuando una solicitud se estima, la imagen se <strong>elimina de verdad</strong>: desaparece tanto del
+        registro como del almacenamiento.
       </p>
     </article>
 
-    <article class="privacy-card fade-in-up delay-9">
-      <h2>9. Cambios en la política</h2>
+    <article class="legal-card fade-in-up delay-6">
+      <h2>6. Edad mínima</h2>
       <p>
-        Podemos actualizar esta política para reflejar mejoras legales o de servicio. Notificaremos cambios relevantes a
-        través de la aplicación o por correo electrónico.
+        Para registrarte debes tener al menos <strong>14 años</strong>, que es la edad a partir de la cual, en
+        España, el consentimiento del menor es válido por sí solo (art. 7 LOPDGDD). No ofrecemos un procedimiento
+        de autorización parental, de modo que por debajo de esa edad no se puede crear una cuenta.
+      </p>
+      <p>
+        Si detectamos o se nos comunica que una cuenta pertenece a un menor de 14 años, la eliminamos junto con sus
+        datos. Si eres madre, padre o tutor y crees que es el caso, escríbenos a
+        <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>.
       </p>
     </article>
+
+    <article class="legal-card fade-in-up delay-7">
+      <h2>7. Cuánto tiempo conservamos los datos</h2>
+      <ul>
+        <li>
+          <strong>Mientras tengas la cuenta activa.</strong> Al eliminarla, borramos tus datos y tus imágenes
+          <strong>de inmediato</strong>, sin periodo de gracia ni copia en espera.
+        </li>
+        <li>
+          <strong>Cuentas inactivas</strong>: si no accedes durante 24 meses podemos eliminar la cuenta, avisándote
+          antes por correo para que puedas conservarla o descargar tus datos.
+        </li>
+        <li>
+          <strong>Imágenes sin referencia</strong> (por ejemplo, al sustituir tu foto de perfil): se eliminan del
+          almacenamiento en un plazo máximo de 30 días.
+        </li>
+        <li>
+          <strong>Prueba del consentimiento</strong>: la conservamos hasta 3 años desde que la cuenta se elimina o
+          el consentimiento se retira, por si hubiera que acreditarlo ante una reclamación.
+        </li>
+        <li>
+          <strong>Registros técnicos y de seguridad</strong>: 12 meses como máximo.
+        </li>
+      </ul>
+      <p>
+        Pasados esos plazos, los datos se eliminan o se anonimizan de forma que ya no sea posible relacionarlos
+        contigo.
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-8">
+      <h2>8. Destinatarios y transferencias</h2>
+      <p>
+        No vendemos ni cedemos tus datos a terceros. Solo acceden a ellos los proveedores que necesitamos para que
+        el servicio funcione, siempre como encargados del tratamiento y con un contrato que les obliga a
+        confidencialidad y seguridad:
+      </p>
+      <ul>
+        <li>El proveedor de alojamiento donde corren nuestros servidores, la base de datos y el almacén de imágenes.</li>
+        <li>El proveedor de correo que entrega los mensajes de la cuenta (verificación, contraseñas, avisos).</li>
+        <li>Esta web se publica a través de Netlify.</li>
+      </ul>
+      <p>
+        Nuestros servidores están en la Unión Europea. Si en algún momento hubiera transferencias fuera del Espacio
+        Económico Europeo, estarían amparadas por una decisión de adecuación o por cláusulas contractuales tipo, y
+        lo indicaríamos aquí.
+      </p>
+      <p>
+        Gestionamos nosotros mismos la identidad de las cuentas y el almacenamiento de las imágenes: no usamos
+        servicios de terceros para alojar tus fotos.
+      </p>
+    </article>
+
+    <article class="legal-card highlight fade-in-up delay-9">
+      <h2>9. Tus derechos</h2>
+      <p>
+        Puedes ejercer en cualquier momento los derechos de acceso, rectificación, supresión, limitación, oposición
+        y portabilidad, y retirar los consentimientos que hayas prestado.
+      </p>
+
+      <h3>Desde la propia aplicación, sin esperas</h3>
+      <ul>
+        <li>
+          <strong>Acceso y portabilidad</strong>: descarga todos tus datos en un fichero legible por máquina desde
+          los ajustes de privacidad.
+        </li>
+        <li>
+          <strong>Supresión</strong>: «Eliminar mi cuenta» borra tus datos, tus imágenes y tu identidad de
+          autenticación. Es inmediato e irreversible.
+        </li>
+        <li><strong>Rectificación</strong>: edita tu perfil cuando quieras.</li>
+        <li><strong>Retirada del consentimiento</strong>: desde la misma pantalla de privacidad.</li>
+      </ul>
+
+      <h3>Por correo</h3>
+      <p>
+        Escríbenos a <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>. Te responderemos en el plazo
+        máximo de un mes. Puede que te pidamos algún dato para comprobar que la solicitud es tuya, pero solo lo
+        imprescindible.
+      </p>
+      <p>
+        Si no has podido instalar la aplicación o prefieres no hacerlo, también puedes solicitar la eliminación
+        desde <a routerLink="/escaperoomlogger/deleteaccount">este formulario</a>.
+      </p>
+      <p>
+        Si consideras que no hemos atendido correctamente tu solicitud, puedes reclamar ante la
+        <strong>Agencia Española de Protección de Datos</strong>
+        (<a href="https://www.aepd.es" target="_blank" rel="noopener">www.aepd.es</a>).
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-9">
+      <h2>10. Seguridad</h2>
+      <p>Entre las medidas que aplicamos:</p>
+      <ul>
+        <li>Cifrado en tránsito (HTTPS) en todas las comunicaciones.</li>
+        <li>
+          Almacén de imágenes <strong>privado</strong>: tus fotos no son accesibles con un enlace permanente, sino
+          mediante enlaces temporales que caducan.
+        </li>
+        <li>Eliminación de los metadatos de las imágenes, incluida la geolocalización.</li>
+        <li>Autenticación delegada en un proveedor de identidad; no almacenamos contraseñas.</li>
+        <li>Control de acceso por roles y permisos: cada persona accede únicamente a lo suyo.</li>
+        <li>Límites de subida y validación del contenido recibido.</li>
+        <li>Copias de respaldo y revisiones periódicas de la configuración de seguridad.</li>
+      </ul>
+      <p>
+        Si a pesar de todo se produjera una violación de seguridad que pudiera suponer un riesgo para tus derechos,
+        lo notificaremos a la Agencia Española de Protección de Datos en un plazo de 72 horas y te informaremos a
+        ti cuando el riesgo sea alto.
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-9">
+      <h2>11. Cambios en esta política</h2>
+      <p>
+        Esta es la <strong>versión {{ version }}</strong>. Cuando la actualicemos, publicaremos aquí la versión
+        nueva y, si el cambio es relevante, la aplicación te pedirá que la revises y la aceptes antes de seguir
+        usándola. Las versiones anteriores quedan registradas junto a cada aceptación, de modo que siempre es
+        posible saber qué texto aceptaste.
+      </p>
+    </article>
+
   </div>
 </section>
-

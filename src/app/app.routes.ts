@@ -27,6 +27,13 @@ export const routes: Routes = [
     title: 'Política de Privacidad | Carajillolabs'
   },
   {
+    // Los términos los exige la app además de la política: son el documento que
+    // respalda el consentimiento sobre el contenido que suben los usuarios.
+    path: 'terms',
+    loadComponent: () => import('./features/terms/terms.component').then(m => m.TermsComponent),
+    title: 'Términos y Condiciones | Carajillolabs'
+  },
+  {
     path: 'equigasto/join/:groupId',
     loadComponent: () => import('./features/join-group/join-group.component').then(m => m.JoinGroupComponent),
     title: 'Unirse al grupo | EquiGasto'

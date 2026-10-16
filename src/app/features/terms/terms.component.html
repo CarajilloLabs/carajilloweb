@@ -1,0 +1,176 @@
+<!--
+  Términos y condiciones.
+
+  El apartado 5 (contenido que subes) es el que respalda jurídicamente el
+  consentimiento USER_CONTENT que pide la API de Escape Room Logger antes de
+  admitir una imagen: si se cambia esa redacción, hay que subir LEGAL_VERSION
+  aquí y PRIVACY_POLICY_VERSION en el backend.
+
+  PENDIENTE DE CONFIRMAR por el responsable: identificación fiscal y domicilio,
+  si se quieren hacer constar, y la ley/foro del apartado 10.
+-->
+<section class="legal-section">
+  <div class="legal-container">
+
+    <header class="legal-header fade-in-up">
+      <h1 class="legal-title">
+        Términos y <span class="gradient-text">Condiciones</span>
+      </h1>
+      <p class="legal-meta">Última actualización: {{ lastUpdated }}</p>
+      <span class="legal-version">Versión {{ version }}</span>
+    </header>
+
+    <article class="legal-card fade-in-up delay-1">
+      <h2>1. Quiénes somos y qué cubren estos términos</h2>
+      <p>
+        <strong>Carajillolabs</strong>, un proyecto de <span class="secondary-brand">Frink &amp; Smithers</span>,
+        desarrolla y mantiene las aplicaciones <strong>Escape Room Logger</strong>, <strong>EquiGasto</strong> y
+        <strong>Ullr</strong>. Puedes escribirnos a
+        <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a>.
+      </p>
+      <p>
+        Estos términos regulan el uso de esas aplicaciones y de esta web. Al crear una cuenta o usarlas, los
+        aceptas. El tratamiento de tus datos se explica en la
+        <a routerLink="/privacy">política de privacidad</a>, que forma parte de estos términos.
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-2">
+      <h2>2. Qué ofrecemos</h2>
+      <p>
+        Escape Room Logger es una herramienta para registrar las salas de escape que juegas, llevar tu bitácora
+        personal, puntuarlas, escribir reseñas y organizar grupos. Es un proyecto independiente, sin relación
+        comercial con las empresas que gestionan las salas.
+      </p>
+      <p>
+        El servicio se presta <strong>de forma gratuita y tal cual</strong>, en la medida en que lo permite la ley
+        y sin que ello afecte a tus derechos como consumidor. Es un proyecto personal de dos desarrolladores: puede
+        haber interrupciones, errores o cambios, y no garantizamos disponibilidad ininterrumpida. Si tuviéramos que
+        cerrar el servicio, te avisaríamos con antelación suficiente para que pudieras descargar tus datos.
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-3">
+      <h2>3. Tu cuenta</h2>
+      <ul>
+        <li>Debes tener al menos <strong>14 años</strong> para registrarte.</li>
+        <li>La información que facilites debe ser veraz, y mantenerla actualizada es cosa tuya.</li>
+        <li>Eres responsable de la actividad que se realice desde tu cuenta; no la compartas.</li>
+        <li>
+          Puedes eliminar tu cuenta cuando quieras desde la aplicación o desde
+          <a routerLink="/escaperoomlogger/deleteaccount">este formulario</a>. El borrado es inmediato e
+          irreversible.
+        </li>
+      </ul>
+    </article>
+
+    <article class="legal-card fade-in-up delay-4">
+      <h2>4. Uso aceptable</h2>
+      <p>Al usar nuestras aplicaciones te comprometes a no:</p>
+      <ul>
+        <li>Publicar contenido ilícito, injurioso, discriminatorio, sexual o violento.</li>
+        <li>Suplantar a otra persona o a una empresa.</li>
+        <li>Publicar reseñas falsas, spam o publicidad encubierta.</li>
+        <li>Revelar la solución de una sala de escape sin advertirlo, ni publicar material que la desvele.</li>
+        <li>Intentar acceder a cuentas o datos ajenos, ni interferir en el funcionamiento del servicio.</li>
+        <li>Extraer masivamente datos o imágenes de la plataforma por medios automatizados.</li>
+      </ul>
+    </article>
+
+    <article class="legal-card highlight fade-in-up delay-5">
+      <h2>5. Contenido que subes</h2>
+      <p>
+        Las fotos, reseñas y notas que publicas siguen siendo <strong>tuyas</strong>. Al subirlas nos concedes
+        únicamente la licencia necesaria para alojarlas y mostrártelas dentro del servicio; no las usamos para
+        publicidad ni las cedemos a terceros, y la licencia termina cuando borras el contenido o tu cuenta.
+      </p>
+
+      <h3>Imágenes en las que aparecen otras personas</h3>
+      <p>
+        Este punto es importante, porque en las fotos de recuerdo de una partida suele aparecer todo el equipo.
+        <strong>Al subir una imagen declaras que</strong>:
+      </p>
+      <ul>
+        <li>eres su autor o tienes derecho a usarla;</li>
+        <li>
+          <strong>las personas identificables que aparecen en ella te han dado permiso</strong> para subirla a la
+          aplicación;
+        </li>
+        <li>
+          si en la imagen aparece una persona menor de edad, cuentas con la autorización de quienes ejercen su
+          patria potestad o tutela.
+        </li>
+      </ul>
+      <p>
+        Puedes retirar cualquier imagen en cualquier momento desde la aplicación. Y cualquier persona que aparezca
+        en una imagen puede pedir su retirada, <strong>tenga cuenta o no</strong>, escribiendo a
+        <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a> o denunciándola desde la propia aplicación. La
+        atendemos sin coste y sin exigir justificación.
+      </p>
+
+      <h3>Límites técnicos</h3>
+      <ul>
+        <li>Hasta <strong>5 fotos por partida</strong> y un máximo de 5 MB por imagen.</li>
+        <li>Formatos admitidos: <strong>JPEG, PNG, GIF y BMP</strong>.</li>
+        <li>
+          Al subirlas les quitamos los metadatos (incluida la geolocalización) y reducimos su tamaño, por tu propia
+          privacidad. Lo explicamos en la <a routerLink="/privacy">política de privacidad</a>.
+        </li>
+        <li>Existe un límite de subidas por hora para evitar abusos.</li>
+      </ul>
+    </article>
+
+    <article class="legal-card fade-in-up delay-6">
+      <h2>6. Moderación y retirada de contenido</h2>
+      <p>
+        Podemos retirar contenido o suspender una cuenta cuando incumpla estos términos, cuando una denuncia
+        resulte fundada o cuando lo exija una autoridad competente. Siempre que sea razonable te informaremos del
+        motivo y podrás responder escribiéndonos.
+      </p>
+      <p>
+        Las denuncias se revisan de forma individual. Si se estiman, el contenido se elimina de verdad, también del
+        almacenamiento de imágenes.
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-7">
+      <h2>7. Reseñas y contenido de terceros</h2>
+      <p>
+        Las reseñas y valoraciones reflejan la opinión de quien las escribe, no la nuestra. La información sobre
+        las salas puede proceder de las propias empresas o de las personas usuarias: hacemos lo posible por
+        mantenerla al día, pero no podemos garantizar que sea exacta en todo momento. Si detectas un error, puedes
+        proponer un cambio desde la aplicación.
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-8">
+      <h2>8. Propiedad intelectual</h2>
+      <p>
+        El nombre, el logotipo, el diseño y el código de las aplicaciones nos pertenecen. Estos términos no te
+        conceden ningún derecho sobre ellos más allá de poder usar las aplicaciones con normalidad.
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-9">
+      <h2>9. Cambios en estos términos</h2>
+      <p>
+        Esta es la <strong>versión {{ version }}</strong>. Si los modificamos, publicaremos aquí la versión nueva
+        y, cuando el cambio sea relevante, la aplicación te pedirá que la aceptes antes de seguir usándola. Si no
+        estás de acuerdo con los nuevos términos, puedes dejar de usar el servicio y eliminar tu cuenta.
+      </p>
+    </article>
+
+    <article class="legal-card fade-in-up delay-9">
+      <h2>10. Ley aplicable</h2>
+      <p>
+        Estos términos se rigen por la legislación española. Si eres consumidor, conservas los derechos que te
+        reconoce la normativa de tu lugar de residencia y puedes acudir a los tribunales de tu domicilio.
+      </p>
+      <p>
+        Para cualquier duda, escríbenos a <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a> antes de nada:
+        es más rápido para todos.
+      </p>
+    </article>
+
+  </div>
+</section>

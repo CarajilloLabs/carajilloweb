@@ -21,10 +21,21 @@
               Información importante
             </h2>
             <ul>
-              <li>Todos tus datos personales serán eliminados permanentemente.</li>
+              <li>
+                <strong>Desde la propia aplicación el borrado es inmediato</strong>: busca «Eliminar mi cuenta» en
+                los ajustes de privacidad. Este formulario es la alternativa si ya no tienes la app instalada.
+              </li>
+              <li>
+                Se eliminan tus datos personales, tu actividad (visitas, reseñas, listas y grupos propios),
+                <strong>las imágenes que hayas subido</strong> y tu identidad de acceso.
+              </li>
               <li>No podrás recuperar tu cuenta ni tus datos después de la eliminación.</li>
               <li>Esta acción es irreversible.</li>
               <li>Si tienes suscripciones activas, estas también serán canceladas.</li>
+              <li>
+                Si solo quieres una copia de tus datos, puedes descargarlos desde la aplicación antes de borrar la
+                cuenta.
+              </li>
             </ul>
           </div>
         </p-card>
@@ -100,14 +111,16 @@
             <div class="icon-wrapper success">
               <i class="pi pi-check-circle"></i>
             </div>
-            <h2>Solicitud recibida</h2>
+            <h2>Ya casi está</h2>
             <p>
-              Hemos recibido tu solicitud de eliminación de cuenta. 
-              Te enviaremos un correo de confirmación a <strong>{{ email() }}</strong> 
-              para completar el proceso.
+              Hemos abierto tu cliente de correo con la solicitud redactada desde
+              <strong>{{ email() }}</strong>. <strong>Revísala y envíala</strong> para que nos llegue.
             </p>
             <p class="note">
-              Por favor, revisa tu bandeja de entrada y sigue las instrucciones del correo.
+              ¿No se ha abierto? Escríbenos tú a
+              <a href="mailto:{{ contactEmail }}">{{ contactEmail }}</a> indicando el correo de la cuenta que
+              quieres eliminar. Respondemos en un plazo máximo de un mes, como marca el RGPD, aunque normalmente
+              mucho antes.
             </p>
             <div class="form-actions">
               <p-button

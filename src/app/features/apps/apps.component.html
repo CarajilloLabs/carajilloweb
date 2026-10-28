@@ -41,6 +41,14 @@
 
             <ng-template pTemplate="footer">
               <div class="app-actions">
+                @if (app.landingUrl) {
+                  <p-button 
+                    label="Ver plataforma" 
+                    icon="pi pi-arrow-right"
+                    (onClick)="navigateTo(app.landingUrl!)"
+                    [rounded]="true"
+                    styleClass="app-button" />
+                }
                 @if (app.playStoreUrl || app.appStoreUrl) {
                   <div class="store-buttons">
                     @if (app.playStoreUrl) {

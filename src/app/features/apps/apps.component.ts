@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy, signal } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { TagModule } from 'primeng/tag';
@@ -13,6 +14,7 @@ interface App {
   playStoreUrl?: string;
   appStoreUrl?: string;
   externalUrl?: string;
+  landingUrl?: string;
   status: 'released' | 'development' | 'coming-soon';
   color: string;
 }
@@ -26,10 +28,22 @@ interface App {
   styleUrl: './apps.component.scss'
 })
 export class AppsComponent {
+  private router = inject(Router);
   apps = signal<App[]>(this.getSortedApps());
 
   private getSortedApps(): App[] {
     const appsData: App[] = [
+      {
+        title: 'Sif',
+        description: 'Plataforma clínica y app móvil para nutricionistas',
+        longDescription: 'Software de gestión clínica y marca blanca para centros y profesionales de la nutrición. Incluye composición corporal segmental, planes sobre base BEDCA con 48 nutrientes, control de citas anti-ausencias y app móvil para pacientes.',
+        technologies: ['Flutter', 'Angular', 'BEDCA', 'OneSignal', 'Multi-tenant'],
+        logo: 'assets/sif/logo-sif.svg',
+        playStoreUrl: 'https://play.google.com/store/apps/details?id=com.carajillolabs.sif',
+        landingUrl: '/sif',
+        status: 'released',
+        color: '#E06316'
+      },
       {
         title: 'EquiGasto',
         description: 'Reparte gastos fácilmente con tus amigos',
@@ -94,6 +108,10 @@ export class AppsComponent {
 
   openLink(url: string): void {
     window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
+  navigateTo(url: string): void {
+    this.router.navigateByUrl(url);
   }
 }
 

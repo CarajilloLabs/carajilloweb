@@ -1,0 +1,721 @@
+<div class="sif-landing">
+  <!-- TOP NAV BAR -->
+  <header class="sif-nav">
+    <div class="sif-nav-container">
+      <div class="sif-brand" (click)="scrollTo('hero')">
+        <img src="assets/sif/logo-sif.svg" alt="Sif Logo" class="sif-logo-img" />
+        <div class="sif-brand-text">
+          <span class="sif-name">Sif</span>
+          <span class="sif-tagline">por Carajillolabs</span>
+        </div>
+      </div>
+
+      <nav class="sif-links">
+        <button type="button" class="nav-btn" (click)="scrollTo('clinica')">Criterio Clínico</button>
+        <button type="button" class="nav-btn" (click)="scrollTo('bedca')">Planes BEDCA</button>
+        <button type="button" class="nav-btn" (click)="scrollTo('app-paciente')">App Paciente</button>
+        <button type="button" class="nav-btn" (click)="scrollTo('gestion')">Gestión & Agenda</button>
+        <button type="button" class="nav-btn" (click)="scrollTo('marca-blanca')">Marca Blanca</button>
+        <button type="button" class="nav-btn" (click)="scrollTo('faq')">Preguntas</button>
+      </nav>
+
+      <div class="sif-actions">
+        <button type="button" class="cta-primary-btn nav-cta" (click)="scrollTo('demo-contacto')">
+          Solicitar demo
+        </button>
+        <button type="button" class="mobile-toggle-btn" (click)="toggleMobileMenu()" aria-label="Abrir menú">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    @if (mobileMenuOpen()) {
+      <div class="mobile-drawer">
+        <button type="button" class="mobile-link" (click)="scrollTo('clinica')">Criterio Clínico</button>
+        <button type="button" class="mobile-link" (click)="scrollTo('bedca')">Planes BEDCA</button>
+        <button type="button" class="mobile-link" (click)="scrollTo('app-paciente')">App Paciente</button>
+        <button type="button" class="mobile-link" (click)="scrollTo('gestion')">Gestión & Agenda</button>
+        <button type="button" class="mobile-link" (click)="scrollTo('marca-blanca')">Marca Blanca</button>
+        <button type="button" class="mobile-link" (click)="scrollTo('faq')">Preguntas frecuentes</button>
+        <button type="button" class="cta-primary-btn mobile-cta" (click)="scrollTo('demo-contacto')">
+          Solicitar demo guiada
+        </button>
+      </div>
+    }
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero-section">
+    <div class="hero-glow"></div>
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Plataforma clínica & App móvil para centros de nutrición
+      </div>
+
+      <h1 class="hero-title">
+        Tu clínica de nutrición, en una sola plataforma.
+      </h1>
+
+      <p class="hero-subtitle">
+        Criterio clínico con composición corporal segmental, planes sobre catálogo BEDCA oficial con 48 nutrientes, app móvil propia para tus pacientes y control de tu negocio bajo tu marca.
+      </p>
+
+      <div class="hero-buttons">
+        <button type="button" class="cta-primary-btn btn-lg" (click)="scrollTo('demo-contacto')">
+          <span>Solicitar una demo guiada</span>
+          <i class="pi pi-arrow-right"></i>
+        </button>
+
+        <a
+          href="https://play.google.com/store/apps/details?id=com.carajillolabs.sif"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="cta-secondary-btn btn-lg"
+        >
+          <i class="pi pi-android play-icon"></i>
+          <span>App en Google Play</span>
+        </a>
+      </div>
+
+      <div class="trust-strip">
+        <div class="trust-item">
+          <i class="pi pi-check-circle"></i>
+          <span>Sin permanencia</span>
+        </div>
+        <div class="trust-divider">·</div>
+        <div class="trust-item">
+          <i class="pi pi-shield"></i>
+          <span>Datos en la UE (RGPD)</span>
+        </div>
+        <div class="trust-divider">·</div>
+        <div class="trust-item">
+          <i class="pi pi-tag"></i>
+          <span>Marca blanca para tu centro</span>
+        </div>
+        <div class="trust-divider">·</div>
+        <div class="trust-item">
+          <i class="pi pi-sync"></i>
+          <span>Migración asistida</span>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-mockup-wrapper">
+        <div class="mockup-frame">
+          <div class="mockup-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <div class="mockup-url-bar">sif.tudominio.com · Panel Profesional</div>
+          </div>
+          <div class="mockup-body">
+            <img
+              src="assets/sif/admin/dashboard.png"
+              alt="Dashboard de Sif para nutricionistas"
+              class="mockup-img"
+              loading="eager"
+            />
+          </div>
+        </div>
+
+        <div class="floating-pill pill-1">
+          <i class="pi pi-chart-pie pill-icon"></i>
+          <div>
+            <strong>Composición segmental</strong>
+            <small>Grasa, músculo y agua por zonas</small>
+          </div>
+        </div>
+
+        <div class="floating-pill pill-2">
+          <i class="pi pi-mobile pill-icon"></i>
+          <div>
+            <strong>App móvil sincronizada</strong>
+            <small>Menú, compra y evolución al día</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOS 3 PILARES -->
+  <section class="pillars-section">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">PROPUESTA DE VALOR</span>
+        <h2 class="section-title">Diseñado para resolver lo que de verdad importa</h2>
+        <p class="section-desc">
+          No vendemos dietas bonitas; vendemos criterio clínico riguroso, tiempo recuperado en cada consulta y control financiero de tu centro.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <i class="pi pi-heart"></i>
+          </div>
+          <h3>Criterio clínico</h3>
+          <p class="pillar-highlight">Decisiones con datos, no con impresiones</p>
+          <p class="pillar-text">
+            Composición corporal segmental completa (10 métricas por zonas), rangos de referencia por edad y sexo, anamnesis estructurada de 18 condiciones e informe clínico en PDF con tu marca.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <i class="pi pi-clock"></i>
+          </div>
+          <h3>Tiempo recuperado</h3>
+          <p class="pillar-highlight">Planifica y agenda en la mitad de tiempo</p>
+          <p class="pillar-text">
+            Editor sobre base de alimentos oficial BEDCA (48 nutrientes calculados al gramo), duplicación de días en un clic, plantillas reutilizables e importación inteligente de menús.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <i class="pi pi-chart-line"></i>
+          </div>
+          <h3>Control del negocio</h3>
+          <p class="pillar-highlight">Tu centro bajo control sin hojas de cálculo</p>
+          <p class="pillar-text">
+            Agenda con detección de solapes, recordatorios push automáticos que reducen ausencias, métricas de ingresos con precios congelados y soporte multi-sede con roles granulares.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRITERIO CLÍNICO Y COMPOSICIÓN CORPORAL -->
+  <section id="clinica" class="feature-block-section">
+    <div class="section-container">
+      <div class="feature-block-grid">
+        <div class="feature-text-col">
+          <span class="section-eyebrow">ANTROPOMETRÍA & DATOS DE SALUD</span>
+          <h2 class="section-title">Composición corporal segmental, no solo un número en la báscula</h2>
+          <p class="section-desc">
+            Analiza grasa, masa magra, agua, masa ósea y grasa visceral por zonas del cuerpo (tronco, brazos y piernas). Detecta asimetrías entre lado derecho e izquierdo, calcula la complexión física mediante el índice de Grant y compara cada valor con rangos clínicos.
+          </p>
+
+          <div class="clinical-tabs-nav">
+            <button
+              type="button"
+              class="tab-btn"
+              [class.active]="activeClinicalTab() === 'segmental'"
+              (click)="selectClinicalTab('segmental')"
+            >
+              <i class="pi pi-chart-bar"></i> Mediciones Segmentales
+            </button>
+            <button
+              type="button"
+              class="tab-btn"
+              [class.active]="activeClinicalTab() === 'anamnesis'"
+              (click)="selectClinicalTab('anamnesis')"
+            >
+              <i class="pi pi-list"></i> Ficha y Anamnesis
+            </button>
+          </div>
+
+          <ul class="feature-check-list">
+            <li>
+              <i class="pi pi-check"></i>
+              <div>
+                <strong>10 métricas segmentales e índice de Grant:</strong>
+                análisis bilateral detallado para ver descompensaciones y evolución muscular real.
+              </div>
+            </li>
+            <li>
+              <i class="pi pi-check"></i>
+              <div>
+                <strong>Checklist clínico de 18 condiciones médicas:</strong>
+                información médica estructurada y comparable, no oculta en un cajón de notas.
+              </div>
+            </li>
+            <li>
+              <i class="pi pi-check"></i>
+              <div>
+                <strong>Informe profesional en PDF para el paciente:</strong>
+                entregable claro con semáforos de salud y encabezado exclusivo de tu clínica.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="feature-visual-col">
+          <div class="image-showcase-box">
+            @if (activeClinicalTab() === 'segmental') {
+              <img
+                src="assets/sif/admin/detalle-paciente-mediciones.png"
+                alt="Mediciones corporales segmentales en Sif"
+                class="feature-img"
+              />
+              <span class="caption-tag">Historial de mediciones corporales y antropometría</span>
+            } @else {
+              <img
+                src="assets/sif/admin/detalle-paciente.png"
+                alt="Detalle de ficha de paciente y anamnesis en Sif"
+                class="feature-img"
+              />
+              <span class="caption-tag">Ficha integral del paciente y datos clínicos estructurados</span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES NUTRICIONALES BEDCA -->
+  <section id="bedca" class="feature-block-section alt-bg">
+    <div class="section-container">
+      <div class="feature-block-grid reversed">
+        <div class="feature-text-col">
+          <span class="section-eyebrow">PLANIFICACIÓN NUTRICIONAL</span>
+          <h2 class="section-title">Planes sobre base de alimentos oficial: precisión al gramo</h2>
+          <p class="section-desc">
+            Crea comidas eligiendo alimentos reales con su gramaje específico, no escribiendo frases al azar. Sif calcula calorías y 48 macronutrientes al instante, permite clonar días enteros y reutilizar plantillas para acelerar tu consulta diaria.
+          </p>
+
+          <div class="feature-badges-row">
+            <span class="badge-item">Base BEDCA (48 nutrientes)</span>
+            <span class="badge-item">Gramajes exactos</span>
+            <span class="badge-item">Modo texto libre compatible</span>
+            <span class="badge-item">Copia de días en 1 clic</span>
+          </div>
+
+          <div class="quote-card">
+            <p>
+              "Si tu centro prefiere redactar recomendaciones o menús en texto libre tradicional, ambos métodos conviven sin fricción en la misma plataforma."
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-visual-col">
+          <div class="image-showcase-box">
+            <img
+              src="assets/sif/admin/menu.png"
+              alt="Planificador de menús nutricionales y cálculo de macros en Sif"
+              class="feature-img"
+            />
+            <span class="caption-tag">Editor de menús estructurados con cálculo automático de macros</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP MÓVIL PARA PACIENTES (Y NUTRICIONISTA) -->
+  <section id="app-paciente" class="app-showcase-section">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">APP MÓVIL DEDICADA</span>
+        <h2 class="section-title">Tu centro en el bolsillo de tu paciente</h2>
+        <p class="section-desc">
+          Aumenta radicalmente la adherencia al tratamiento. Tus pacientes consultan su dieta, su evolución y su lista de la compra al instante, mientras reciben recordatorios de citas por notificación push.
+        </p>
+      </div>
+
+      <!-- App Tabs Nav -->
+      <div class="app-tabs-nav">
+        @for (tab of appTabs; track tab.id) {
+          <button
+            type="button"
+            class="app-tab-btn"
+            [class.active]="activeAppTab() === tab.id"
+            (click)="selectAppTab(tab.id)"
+          >
+            <span class="tab-title">{{ tab.title }}</span>
+            <span class="tab-subtitle">{{ tab.subtitle }}</span>
+          </button>
+        }
+      </div>
+
+      <!-- App Tab Content -->
+      @for (tab of appTabs; track tab.id) {
+        @if (activeAppTab() === tab.id) {
+          <div class="app-display-grid">
+            <div class="app-info-card">
+              <h3>{{ tab.title }}</h3>
+              <p class="app-lead">{{ tab.description }}</p>
+
+              <div class="app-bullets">
+                @for (b of tab.bullets; track b) {
+                  <div class="bullet-row">
+                    <i class="pi pi-check-circle"></i>
+                    <span>{{ b }}</span>
+                  </div>
+                }
+              </div>
+
+              <div class="app-download-box">
+                <div class="download-text">
+                  <strong>Disponible en Google Play Store</strong>
+                  <span>Acceso para pacientes y seguimiento para el profesional</span>
+                </div>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.carajillolabs.sif"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="play-badge-link"
+                >
+                  <i class="pi pi-android"></i>
+                  <span>Descargar en Google Play</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="app-phone-mockup">
+              <img [src]="tab.image" [alt]="tab.title" class="phone-img" />
+            </div>
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <!-- AGENDA & GESTIÓN DE CENTRO -->
+  <section id="gestion" class="feature-block-section">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">AGENDA & OPERATIVA</span>
+        <h2 class="section-title">Agenda que reduce ausencias y se llena sola</h2>
+        <p class="section-desc">
+          Evita solapamientos, bloquea festivos y horas personales, y reduce el absentismo con recordatorios push automáticos el día antes y el mismo día de la cita.
+        </p>
+      </div>
+
+      <div class="agenda-visual-container">
+        <div class="agenda-image-card">
+          <img
+            src="assets/sif/admin/agenda.png"
+            alt="Calendario y agenda de citas para nutricionistas en Sif"
+            class="feature-img"
+          />
+        </div>
+
+        <div class="agenda-features-grid">
+          <div class="agenda-card">
+            <div class="mini-icon"><i class="pi pi-bell"></i></div>
+            <h4>Recordatorios automáticos</h4>
+            <p>Notificaciones push enviadas el día anterior y el mismo día de la consulta para asegurar la asistencia.</p>
+          </div>
+          <div class="agenda-card">
+            <div class="mini-icon"><i class="pi pi-calendar-plus"></i></div>
+            <h4>Solicitud de citas desde la app</h4>
+            <p>Tus pacientes pueden proponer o reagendar consultas con confirmación en un clic por parte del profesional.</p>
+          </div>
+          <div class="agenda-card">
+            <div class="mini-icon"><i class="pi pi-ban"></i></div>
+            <h4>Control de ausencias (No-Show)</h4>
+            <p>Registro histórico de asistencia para identificar pacientes en riesgo de abandono y reactivarlos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÉTRICAS DE NEGOCIO Y MARCA BLANCA -->
+  <section id="marca-blanca" class="feature-block-section alt-bg">
+    <div class="section-container">
+      <div class="feature-block-grid">
+        <div class="feature-text-col">
+          <span class="section-eyebrow">FINANZAS & MULTI-CENTRO</span>
+          <h2 class="section-title">El negocio bajo control. Con tu propia marca.</h2>
+          <p class="section-desc">
+            Sabe cuánto has ingresado, el valor de tu consulta media y el rendimiento de tus profesionales. El precio de cada cita queda congelado en el momento de la reserva: tus informes históricos nunca se descuadran cuando actualizas tarifas.
+          </p>
+
+          <div class="metrics-cards-row">
+            <div class="mini-stat">
+              <span class="stat-label">Control de ingresos</span>
+              <strong>Desglose por servicio y profesional</strong>
+            </div>
+            <div class="mini-stat">
+              <span class="stat-label">Multi-sede y roles</span>
+              <strong>Aislamiento total de datos por centro</strong>
+            </div>
+          </div>
+
+          <div class="brand-white-box">
+            <h4><i class="pi pi-palette"></i> Tu centro es el protagonista</h4>
+            <p>
+              Logotipo, color primario, dirección y datos de contacto en la web, en la app móvil y en cada PDF de menú o de composición corporal. Tus pacientes ven tu marca, no la de una plataforma externa.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-visual-col dual-visual">
+          <div class="stacked-preview">
+            <img
+              src="assets/sif/admin/metricas-facturacion.png"
+              alt="Métricas de facturación de consultas de nutrición en Sif"
+              class="feature-img"
+            />
+            <span class="caption-tag">Facturación real y análisis de ingresos por servicio</span>
+          </div>
+          <div class="stacked-preview">
+            <img
+              src="assets/sif/admin/metricas-asistencia.png"
+              alt="Métricas de asistencia a consultas en Sif"
+              class="feature-img"
+            />
+            <span class="caption-tag">Tasa de asistencia y puntualidad por consulta</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section id="faq" class="faq-section">
+    <div class="section-container">
+      <div class="section-header text-center">
+        <span class="section-eyebrow">RESOLVEMOS TUS DUDAS</span>
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-desc">
+          Todo lo que necesitas saber antes de dar el paso hacia una gestión profesional.
+        </p>
+      </div>
+
+      <div class="faq-accordion">
+        @for (item of faqs(); track item.question; let idx = $index) {
+          <div class="faq-item" [class.open]="item.isOpen">
+            <button
+              type="button"
+              class="faq-question-btn"
+              (click)="toggleFaq(idx)"
+              [attr.aria-expanded]="item.isOpen"
+            >
+              <span>{{ item.question }}</span>
+              <i class="pi" [class.pi-chevron-down]="!item.isOpen" [class.pi-chevron-up]="item.isOpen"></i>
+            </button>
+            @if (item.isOpen) {
+              <div class="faq-answer-pane">
+                <p>{{ item.answer }}</p>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO DE CAPTACIÓN (DEMO / CONTACTO) -->
+  <section id="demo-contacto" class="lead-section">
+    <div class="section-container">
+      <div class="lead-card-container">
+        <div class="lead-intro-col">
+          <span class="section-eyebrow">DA EL SIGUIENTE PASO</span>
+          <h2 class="lead-title">Prueba Sif en tu consulta o agenda una demo personalizada</h2>
+          <p class="lead-text">
+            Te mostramos en 15 minutos cómo estructurar tus planes, medir composición corporal segmental y poner la app en manos de tus pacientes. Sin compromiso.
+          </p>
+
+          <div class="lead-features">
+            <div class="lead-feat-item">
+              <i class="pi pi-check"></i>
+              <span>Demostración guiada adaptada a tu forma de trabajar</span>
+            </div>
+            <div class="lead-feat-item">
+              <i class="pi pi-check"></i>
+              <span>Resolución de dudas sobre migración desde otros softwares</span>
+            </div>
+            <div class="lead-feat-item">
+              <i class="pi pi-check"></i>
+              <span>Sin tarjeta de crédito ni compromisos de permanencia</span>
+            </div>
+          </div>
+
+          <div class="lead-direct-contact">
+            <p><strong>¿Prefieres consultar directamente?</strong></p>
+            <p>Escríbenos a <a href="mailto:info@carajillolabs.com">info&#64;carajillolabs.com</a></p>
+          </div>
+        </div>
+
+        <div class="lead-form-col">
+          @if (formSuccess()) {
+            <div class="success-message-box">
+              <div class="success-icon"><i class="pi pi-check"></i></div>
+              <h3>¡Solicitud enviada con éxito!</h3>
+              <p>
+                Hemos recibido tus datos correctamente. Nuestro equipo se pondrá en contacto contigo en un plazo máximo de 24 horas laborables para coordinar tu demostración o responder tus preguntas.
+              </p>
+              <button type="button" class="cta-secondary-btn" (click)="formSuccess.set(false)">
+                Enviar otra solicitud
+              </button>
+            </div>
+          } @else {
+            <form [formGroup]="leadForm" (ngSubmit)="onSubmitLead()" class="lead-form" novalidate>
+              <div class="lead-type-selector">
+                <label class="radio-pill" [class.selected]="leadForm.get('leadType')?.value === 'demo'">
+                  <input type="radio" formControlName="leadType" value="demo" />
+                  <span>Quiero agendar una demo</span>
+                </label>
+                <label class="radio-pill" [class.selected]="leadForm.get('leadType')?.value === 'consulta'">
+                  <input type="radio" formControlName="leadType" value="consulta" />
+                  <span>Consulta general / Info</span>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label for="fullName">Nombre y Apellidos *</label>
+                <input
+                  id="fullName"
+                  type="text"
+                  formControlName="fullName"
+                  placeholder="Ej. Laura Gómez"
+                  [class.is-invalid]="formSubmitted() && leadForm.get('fullName')?.invalid"
+                />
+                @if (formSubmitted() && leadForm.get('fullName')?.errors?.['required']) {
+                  <span class="field-error">Por favor, introduce tu nombre.</span>
+                }
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="email">Email profesional *</label>
+                  <input
+                    id="email"
+                    type="email"
+                    formControlName="email"
+                    placeholder="laura@clinicagomez.es"
+                    [class.is-invalid]="formSubmitted() && leadForm.get('email')?.invalid"
+                  />
+                  @if (formSubmitted() && leadForm.get('email')?.errors) {
+                    <span class="field-error">Introduce un email válido.</span>
+                  }
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Teléfono / WhatsApp *</label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    formControlName="phone"
+                    placeholder="600 000 000"
+                    [class.is-invalid]="formSubmitted() && leadForm.get('phone')?.invalid"
+                  />
+                  @if (formSubmitted() && leadForm.get('phone')?.errors) {
+                    <span class="field-error">Introduce un teléfono de contacto.</span>
+                  }
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="clinicName">Nombre de tu centro o consulta *</label>
+                  <input
+                    id="clinicName"
+                    type="text"
+                    formControlName="clinicName"
+                    placeholder="Ej. Nutrición & Salud Gómez"
+                    [class.is-invalid]="formSubmitted() && leadForm.get('clinicName')?.invalid"
+                  />
+                  @if (formSubmitted() && leadForm.get('clinicName')?.errors?.['required']) {
+                    <span class="field-error">Indica el nombre de tu consulta.</span>
+                  }
+                </div>
+
+                <div class="form-group">
+                  <label for="centerType">Tipo de actividad</label>
+                  <select id="centerType" formControlName="centerType">
+                    <option value="individual">Nutricionista independiente</option>
+                    <option value="clinica">Clínica con varios profesionales</option>
+                    <option value="deportivo">Centro deportivo / Fisio-Nutrición</option>
+                    <option value="grupo">Grupo o Franquicia sanitaria</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">¿Qué te gustaría ver en la demo o qué software usas ahora? (Opcional)</label>
+                <textarea
+                  id="message"
+                  rows="3"
+                  formControlName="message"
+                  placeholder="Cuéntanos brevemente tus necesidades actuales..."
+                ></textarea>
+              </div>
+
+              <div class="privacy-checkbox-row">
+                <label class="checkbox-label">
+                  <input type="checkbox" formControlName="acceptPrivacy" />
+                  <span>
+                    He leído y acepto la
+                    <a routerLink="/privacy" target="_blank">política de privacidad</a>.
+                    Tus datos serán tratados exclusivamente para responder a tu solicitud.
+                  </span>
+                </label>
+                @if (formSubmitted() && leadForm.get('acceptPrivacy')?.errors) {
+                  <span class="field-error">Debes aceptar la política de privacidad.</span>
+                }
+              </div>
+
+              <button type="submit" class="cta-primary-btn submit-btn">
+                <span>{{ leadForm.get('leadType')?.value === 'demo' ? 'Solicitar mi demostración gratuita' : 'Enviar mensaje de consulta' }}</span>
+                <i class="pi pi-send"></i>
+              </button>
+            </form>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER INDEPENDIENTE SIF -->
+  <footer class="sif-footer">
+    <div class="section-container">
+      <div class="footer-top-row">
+        <div class="footer-brand-box">
+          <div class="footer-logo">
+            <img src="assets/sif/logo-sif.svg" alt="Sif" class="sif-logo-img" />
+            <span class="sif-name">Sif</span>
+          </div>
+          <p class="footer-tagline">
+            Plataforma clínica para centros de nutrición que quieren medir resultados, trabajar más rápido y mantener su propia marca.
+          </p>
+          <div class="play-button-wrapper">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.carajillolabs.sif"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer-play-btn"
+            >
+              <i class="pi pi-android"></i>
+              <span>Descargar App Paciente</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Plataforma</h5>
+          <a (click)="scrollTo('clinica')">Criterio Clínico</a>
+          <a (click)="scrollTo('bedca')">Planes BEDCA</a>
+          <a (click)="scrollTo('app-paciente')">App Paciente</a>
+          <a (click)="scrollTo('gestion')">Agenda & Facturación</a>
+          <a (click)="scrollTo('marca-blanca')">Marca Blanca</a>
+        </div>
+
+        <div class="footer-nav-col">
+          <h5>Legal & Confianza</h5>
+          <a routerLink="/privacy">Política de Privacidad</a>
+          <a routerLink="/terms">Términos del Servicio</a>
+          <a (click)="scrollTo('faq')">Preguntas Frecuentes</a>
+          <a (click)="scrollTo('demo-contacto')">Contacto & Demo</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p class="copy-text">
+          &copy; {{ currentYear }} Sif. Todos los derechos reservados. Desarrollado con excelencia por
+          <a routerLink="/">Carajillolabs</a>.
+        </p>
+        <p class="eu-badge">
+          <i class="pi pi-shield"></i> Servidores seguros alojados en la Unión Europea (RGPD)
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>

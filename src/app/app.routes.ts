@@ -7,6 +7,11 @@ export const routes: Routes = [
     title: 'Carajillolabs | Desarrollo de Apps Móviles'
   },
   {
+    path: 'sif',
+    loadComponent: () => import('./features/sif/sif.component').then(m => m.SifComponent),
+    title: 'Sif | Plataforma Clínica y App Móvil para Nutricionistas'
+  },
+  {
     path: 'apps',
     loadComponent: () => import('./features/apps/apps.component').then(m => m.AppsComponent),
     title: 'Nuestras Apps | Carajillolabs'

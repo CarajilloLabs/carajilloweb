@@ -72,7 +72,9 @@
 }
 
 ::ng-deep {
-  .app-card {
+  // .app-card.p-card: mayor especificidad que .p-card de PrimeNG (display: block)
+  // para que el footer quede siempre pegado al fondo de la tarjeta.
+  .app-card.p-card {
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     border-radius: 16px !important;
@@ -182,6 +184,7 @@
   gap: 0.4rem;
   margin-top: auto;
   padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
 }
 
 .tech-tag {
@@ -205,24 +208,33 @@
 .app-actions {
   padding: 1.25rem 1.5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80px;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  // styleClass de PrimeNG se aplica al <button> interno, así que el ancho
+  // y el alto hay que aplicarlos al host <p-button> y a su botón.
+  ::ng-deep p-button {
+    display: block;
+    width: 100%;
+  }
+
+  ::ng-deep .p-button {
+    width: 100%;
+    min-height: 42px;
+    justify-content: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+  }
 }
 
 .store-buttons {
   display: flex;
+  flex-direction: column;
   gap: 0.75rem;
   width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 
-  ::ng-deep .app-button {
-    flex: 1;
-    min-width: 140px;
-    max-width: 200px;
-    height: 42px;
+  ::ng-deep p-button {
+    width: 100%;
   }
 }
 

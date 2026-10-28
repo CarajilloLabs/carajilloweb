@@ -122,15 +122,18 @@ a {
 
 /* Estilos compartidos de botones */
 // Botones principales con estilo común (borde moderno)
-::ng-deep .custom-button,
-::ng-deep .app-button,
-::ng-deep .p-button.custom-button,
-::ng-deep .p-button.app-button {
+// NOTA: este archivo es global; ::ng-deep no es válido aquí y hacía que
+// todas estas reglas se descartaran.
+.custom-button,
+.app-button,
+.p-button.custom-button,
+.p-button.app-button {
   background: transparent !important;
   border: 2px solid rgba(255, 107, 53, 0.6) !important;
   color: rgba(255, 255, 255, 0.95) !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
+  gap: 0.5rem;
   padding: 0.75rem 1.5rem !important;
   border-radius: 12px !important;
   position: relative !important;
@@ -178,13 +181,14 @@ a {
 }
 
 // Variante con gradiente (para CTA principales)
-::ng-deep .custom-button-gradient,
-::ng-deep .p-button.custom-button-gradient {
+.custom-button-gradient,
+.p-button.custom-button-gradient {
   background: #FF6B35 !important;
   border: none !important;
   color: #fff !important;
   font-weight: 600 !important;
   transition: all 0.3s ease !important;
+  gap: 0.5rem;
   padding: 0.75rem 1.5rem !important;
   border-radius: 12px !important;
 

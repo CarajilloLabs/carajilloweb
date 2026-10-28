@@ -11,10 +11,10 @@
  * que decía haberse actualizado hoy cualquier día que se visitara y no había
  * forma de saber qué texto estaba vigente.
  */
-export const LEGAL_VERSION = '2026-10-16';
+export const LEGAL_VERSION = '2026-10-28';
 
 /** Fecha de la última revisión, en texto, para mostrarla en la cabecera. */
-export const LEGAL_LAST_UPDATED = '16 de octubre de 2026';
+export const LEGAL_LAST_UPDATED = '28 de octubre de 2026';
 
 /** Canal para ejercer los derechos y para las solicitudes de retirada. */
 export const LEGAL_CONTACT_EMAIL = 'info@carajillolabs.com';

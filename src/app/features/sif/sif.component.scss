@@ -731,7 +731,7 @@ $sif-text-muted: #64748b;
       padding: 1.25rem 1.5rem;
       margin-top: 1rem;
 
-      h4 {
+      h3, h4 {
         font-size: 1.05rem;
         font-weight: 700;
         color: #ff9d5c;
@@ -768,7 +768,9 @@ $sif-text-muted: #64748b;
         position: absolute;
         bottom: 12px;
         left: 12px;
-        right: 12px;
+        right: auto;
+        max-width: 480px;
+        z-index: 10;
         background: rgba(10, 12, 14, 0.85);
         backdrop-filter: blur(8px);
         padding: 0.45rem 0.85rem;
@@ -860,7 +862,7 @@ $sif-text-muted: #64748b;
         margin-bottom: 0.85rem;
       }
 
-      h4 {
+      h3, h4 {
         font-size: 1.1rem;
         font-weight: 700;
         color: #ffffff;
@@ -1050,6 +1052,44 @@ $sif-text-muted: #64748b;
           transform: translateY(-4px) scale(1.015);
         }
       }
+    }
+  }
+
+  .staff-mobile-feature-strip {
+    margin-top: 3rem;
+    background: linear-gradient(135deg, rgba(22, 27, 33, 0.95), rgba(16, 20, 24, 0.95));
+    border: 1px solid rgba(224, 99, 22, 0.28);
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+    .staff-feature-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(224, 99, 22, 0.15);
+      color: $sif-primary-hover;
+      padding: 0.35rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: $sif-text-secondary;
+      margin: 0;
     }
   }
 }
@@ -1438,13 +1478,13 @@ $sif-text-muted: #64748b;
       flex-direction: column;
       gap: 0.85rem;
 
-      h5 {
+      h5, .footer-col-title {
         font-size: 0.9rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.08em;
         color: #ffffff;
-        margin-bottom: 0.5rem;
+        margin: 0 0 0.5rem 0;
       }
 
       a {
@@ -1488,5 +1528,90 @@ $sif-text-muted: #64748b;
         color: $sif-emerald;
       }
     }
+  }
+}
+
+// -------------------------------------------------------------------------
+// NUTI (Asistente IA) & Importador de menús
+// -------------------------------------------------------------------------
+.feature-block-section {
+  .assistant-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    background: rgba(234, 88, 12, 0.1);
+    color: #ea580c;
+    border: 1px solid rgba(234, 88, 12, 0.25);
+    border-radius: 9999px;
+    font-size: 0.825rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    .assistant-dot {
+      width: 8px;
+      height: 8px;
+      background: #ea580c;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #ea580c;
+    }
+  }
+
+  .import-highlight-pill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    margin-top: 1.25rem;
+
+    i {
+      color: #ea580c;
+      font-size: 1.15rem;
+      margin-top: 2px;
+    }
+
+    strong {
+      display: block;
+      font-size: 0.9rem;
+      color: #0f172a;
+    }
+
+    span {
+      font-size: 0.825rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+  }
+}
+
+// -------------------------------------------------------------------------
+// Distintivo iOS "Próximamente en Apple App Store"
+// -------------------------------------------------------------------------
+.app-store-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.ios-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: default;
+
+  i {
+    font-size: 1.1rem;
   }
 }

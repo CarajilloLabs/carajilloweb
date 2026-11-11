@@ -37,6 +37,8 @@
               "src/assets",
               "src/_redirects",
               "src/app-ads.txt",
+              "src/robots.txt",
+              "src/sitemap.xml",
               {
                 "glob": "**/*",
                 "input": "src/.well-known",

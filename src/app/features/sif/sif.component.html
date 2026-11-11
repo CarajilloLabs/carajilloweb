@@ -13,6 +13,7 @@
       <nav class="sif-links">
         <button type="button" class="nav-btn" (click)="scrollTo('clinica')">Criterio Clínico</button>
         <button type="button" class="nav-btn" (click)="scrollTo('bedca')">Planes BEDCA</button>
+        <button type="button" class="nav-btn" (click)="scrollTo('nuti-ia')">Asistente Nuti</button>
         <button type="button" class="nav-btn" (click)="scrollTo('app-paciente')">App Paciente</button>
         <button type="button" class="nav-btn" (click)="scrollTo('gestion')">Gestión & Agenda</button>
         <button type="button" class="nav-btn" (click)="scrollTo('marca-blanca')">Marca Blanca</button>
@@ -36,6 +37,7 @@
       <div class="mobile-drawer">
         <button type="button" class="mobile-link" (click)="scrollTo('clinica')">Criterio Clínico</button>
         <button type="button" class="mobile-link" (click)="scrollTo('bedca')">Planes BEDCA</button>
+        <button type="button" class="mobile-link" (click)="scrollTo('nuti-ia')">Asistente Nuti</button>
         <button type="button" class="mobile-link" (click)="scrollTo('app-paciente')">App Paciente</button>
         <button type="button" class="mobile-link" (click)="scrollTo('gestion')">Gestión & Agenda</button>
         <button type="button" class="mobile-link" (click)="scrollTo('marca-blanca')">Marca Blanca</button>
@@ -57,11 +59,11 @@
       </div>
 
       <h1 class="hero-title">
-        Tu clínica de nutrición, en una sola plataforma.
+        Software para nutricionistas: tu clínica en una sola plataforma.
       </h1>
 
       <p class="hero-subtitle">
-        Criterio clínico con composición corporal segmental, planes sobre catálogo BEDCA oficial con 48 nutrientes, app móvil propia para tus pacientes y control de tu negocio bajo tu marca.
+        Criterio clínico con composición corporal segmental, planes sobre catálogo BEDCA oficial con 48 nutrientes, app móvil propia para pacientes y profesionales, y control total de tu negocio bajo tu propia marca.
       </p>
 
       <div class="hero-buttons">
@@ -251,6 +253,7 @@
                 src="assets/sif/admin/detalle-paciente-mediciones.png"
                 alt="Mediciones corporales segmentales en Sif"
                 class="feature-img"
+                loading="lazy"
               />
               <span class="caption-tag">Historial de mediciones corporales y antropometría</span>
             } @else {
@@ -258,6 +261,7 @@
                 src="assets/sif/admin/detalle-paciente.png"
                 alt="Detalle de ficha de paciente y anamnesis en Sif"
                 class="feature-img"
+                loading="lazy"
               />
               <span class="caption-tag">Ficha integral del paciente y datos clínicos estructurados</span>
             }
@@ -281,8 +285,36 @@
           <div class="feature-badges-row">
             <span class="badge-item">Base BEDCA (48 nutrientes)</span>
             <span class="badge-item">Gramajes exactos</span>
+            <span class="badge-item">Recetas con raciones dinámicas</span>
             <span class="badge-item">Modo texto libre compatible</span>
             <span class="badge-item">Copia de días en 1 clic</span>
+          </div>
+
+          <div class="clinical-tabs-nav">
+            <button
+              type="button"
+              class="tab-btn"
+              [class.active]="activeBedcaTab() === 'menu'"
+              (click)="selectBedcaTab('menu')"
+            >
+              <i class="pi pi-calendar"></i> Editor de Menús BEDCA
+            </button>
+            <button
+              type="button"
+              class="tab-btn"
+              [class.active]="activeBedcaTab() === 'recetario'"
+              (click)="selectBedcaTab('recetario')"
+            >
+              <i class="pi pi-book"></i> Recetario &amp; Raciones Dinámicas
+            </button>
+          </div>
+
+          <div class="import-highlight-pill">
+            <i class="pi pi-sparkles"></i>
+            <div>
+              <strong>Importación de menús por IA (foto, PDF o Word):</strong>
+              <span>Convierte dietas antiguas en documentos o imágenes en planes estructurados editables sin picar datos a mano.</span>
+            </div>
           </div>
 
           <div class="quote-card">
@@ -294,26 +326,97 @@
 
         <div class="feature-visual-col">
           <div class="image-showcase-box">
-            <img
-              src="assets/sif/admin/menu.png"
-              alt="Planificador de menús nutricionales y cálculo de macros en Sif"
-              class="feature-img"
-            />
-            <span class="caption-tag">Editor de menús estructurados con cálculo automático de macros</span>
+            @if (activeBedcaTab() === 'menu') {
+              <img
+                src="assets/sif/admin/menu.png"
+                alt="Planificador de menús nutricionales y cálculo de macros en Sif"
+                class="feature-img"
+                loading="lazy"
+                width="1440"
+                height="900"
+              />
+              <span class="caption-tag">Editor de menús estructurados con cálculo automático de macros</span>
+            } @else {
+              <img
+                src="assets/sif/admin/receta-detalle.png"
+                alt="Recetario clínico con raciones dinámicas en Sif"
+                class="feature-img"
+                loading="lazy"
+                width="1440"
+                height="900"
+              />
+              <span class="caption-tag">Recetario clínico con escalado automático de gramajes por comensal</span>
+            }
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- APP MÓVIL PARA PACIENTES (Y NUTRICIONISTA) -->
+  <!-- ASISTENTE IA NUTI -->
+  <section id="nuti-ia" class="feature-block-section">
+    <div class="section-container">
+      <div class="feature-block-grid">
+        <div class="feature-text-col">
+          <div class="assistant-badge">
+            <span class="assistant-dot"></span>
+            Copiloto Clínico con Inteligencia Artificial
+          </div>
+          <h2 class="section-title">Conoce a Nuti: tu asistente en consulta con supervisión humana</h2>
+          <p class="section-desc">
+            Nuti es el asistente inteligente integrado en la pantalla de Sif. Navega por el software, localiza pacientes, prepara mediciones y redacta propuestas de menú en segundos, liberándote de tareas repetitivas durante la consulta.
+          </p>
+
+          <ul class="feature-check-list">
+            <li>
+              <i class="pi pi-check"></i>
+              <div>
+                <strong>Control absoluto en cada paso:</strong>
+                Nuti propone acciones en tarjetas interactivas en pantalla. Nada se guarda ni se ejecuta en la base de datos sin tu confirmación expresa.
+              </div>
+            </li>
+            <li>
+              <i class="pi pi-check"></i>
+              <div>
+                <strong>Agilidad sin tocar el teclado:</strong>
+                Pídele registrar el peso de la visita, localizar el historial de un paciente o preparar una cita mientras mantienes la atención en la persona.
+              </div>
+            </li>
+            <li>
+              <i class="pi pi-check"></i>
+              <div>
+                <strong>Privacidad sanitaria y costes bajo control (BYOK):</strong>
+                Cada centro conecta su propia clave de IA. Tus datos sanitarios no entrenan modelos ajenos y no pagas sobrecostes en tu suscripción.
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="feature-visual-col">
+          <div class="image-showcase-box">
+            <img
+              src="assets/sif/admin/nuti-asistente.png"
+              alt="Nuti, asistente de inteligencia artificial en Sif"
+              class="feature-img"
+              loading="lazy"
+              width="1440"
+              height="900"
+            />
+            <span class="caption-tag">Nuti interactuando en pantalla con sugerencias y acciones guiadas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APP MÓVIL DUAL: PACIENTES Y PROFESIONALES -->
   <section id="app-paciente" class="app-showcase-section">
     <div class="section-container">
       <div class="section-header text-center">
-        <span class="section-eyebrow">APP MÓVIL DEDICADA</span>
-        <h2 class="section-title">Tu centro en el bolsillo de tu paciente</h2>
+        <span class="section-eyebrow">APP MÓVIL DEDICADA & MULTIPLATAFORMA</span>
+        <h2 class="section-title">Tu centro en el bolsillo: app para pacientes y profesionales</h2>
         <p class="section-desc">
-          Aumenta radicalmente la adherencia al tratamiento. Tus pacientes consultan su dieta, su evolución y su lista de la compra al instante, mientras reciben recordatorios de citas por notificación push.
+          Aumenta radicalmente la adherencia al tratamiento y gestiona tu actividad en movilidad. Planes claros, registro de agua, lista de la compra por supermercado y control de agenda desde el móvil.
         </p>
       </div>
 
@@ -354,24 +457,39 @@
                   <strong>Disponible en Google Play Store</strong>
                   <span>Acceso para pacientes y seguimiento para el profesional</span>
                 </div>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.carajillolabs.sif"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="play-badge-link"
-                >
-                  <i class="pi pi-android"></i>
-                  <span>Descargar en Google Play</span>
-                </a>
+                <div class="app-store-strip">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.carajillolabs.sif"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="play-badge-link"
+                  >
+                    <i class="pi pi-android"></i>
+                    <span>Descargar en Google Play</span>
+                  </a>
+                  <div class="ios-badge-pill" title="En proceso de publicación para iPhone">
+                    <i class="pi pi-apple"></i>
+                    <span>Próximamente en Apple App Store</span>
+                  </div>
+                </div>
               </div>
             </div>
 
             <div class="app-phone-mockup">
-              <img [src]="tab.image" [alt]="tab.title" class="phone-img" />
+              <img [src]="tab.image" [alt]="tab.title" class="phone-img" loading="lazy" />
             </div>
           </div>
         }
       }
+
+      <!-- Franja App Profesional -->
+      <div class="staff-mobile-feature-strip">
+        <div class="staff-feature-badge"><i class="pi pi-briefcase"></i> Modo Nutricionista en el móvil</div>
+        <h3>¿Fuera de consulta? Gestiona tu actividad sin encender el ordenador</h3>
+        <p>
+          La app de Sif es dual: mientras el paciente sigue sus pautas, el profesional consulta su agenda diaria, aprueba solicitudes de citas, anota notas o bloqueos de calendario y contacta directamente con cualquier paciente por llamada o WhatsApp en un solo toque.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -392,24 +510,25 @@
             src="assets/sif/admin/agenda.png"
             alt="Calendario y agenda de citas para nutricionistas en Sif"
             class="feature-img"
+            loading="lazy"
           />
         </div>
 
         <div class="agenda-features-grid">
           <div class="agenda-card">
             <div class="mini-icon"><i class="pi pi-bell"></i></div>
-            <h4>Recordatorios automáticos</h4>
-            <p>Notificaciones push enviadas el día anterior y el mismo día de la consulta para asegurar la asistencia.</p>
+            <h3>Recordatorios automáticos</h3>
+            <p>Notificaciones push enviadas el día anterior y el mismo día de la consulta para reducir drásticamente el absentismo.</p>
           </div>
           <div class="agenda-card">
             <div class="mini-icon"><i class="pi pi-calendar-plus"></i></div>
-            <h4>Solicitud de citas desde la app</h4>
+            <h3>Solicitud de citas desde la app</h3>
             <p>Tus pacientes pueden proponer o reagendar consultas con confirmación en un clic por parte del profesional.</p>
           </div>
           <div class="agenda-card">
-            <div class="mini-icon"><i class="pi pi-ban"></i></div>
-            <h4>Control de ausencias (No-Show)</h4>
-            <p>Registro histórico de asistencia para identificar pacientes en riesgo de abandono y reactivarlos.</p>
+            <div class="mini-icon"><i class="pi pi-shield"></i></div>
+            <h3>Control de solapes y ausencias</h3>
+            <p>Detección activa de solapamientos al agendar, notas de calendario por colores y registro histórico de no-shows.</p>
           </div>
         </div>
       </div>
@@ -439,7 +558,7 @@
           </div>
 
           <div class="brand-white-box">
-            <h4><i class="pi pi-palette"></i> Tu centro es el protagonista</h4>
+            <h3><i class="pi pi-palette"></i> Tu centro es el protagonista</h3>
             <p>
               Logotipo, color primario, dirección y datos de contacto en la web, en la app móvil y en cada PDF de menú o de composición corporal. Tus pacientes ven tu marca, no la de una plataforma externa.
             </p>
@@ -452,6 +571,7 @@
               src="assets/sif/admin/metricas-facturacion.png"
               alt="Métricas de facturación de consultas de nutrición en Sif"
               class="feature-img"
+              loading="lazy"
             />
             <span class="caption-tag">Facturación real y análisis de ingresos por servicio</span>
           </div>
@@ -460,6 +580,7 @@
               src="assets/sif/admin/metricas-asistencia.png"
               alt="Métricas de asistencia a consultas en Sif"
               class="feature-img"
+              loading="lazy"
             />
             <span class="caption-tag">Tasa de asistencia y puntualidad por consulta</span>
           </div>
@@ -690,16 +811,16 @@
         </div>
 
         <div class="footer-nav-col">
-          <h5>Plataforma</h5>
+          <p class="footer-col-title">Plataforma</p>
           <a (click)="scrollTo('clinica')">Criterio Clínico</a>
           <a (click)="scrollTo('bedca')">Planes BEDCA</a>
-          <a (click)="scrollTo('app-paciente')">App Paciente</a>
+          <a (click)="scrollTo('app-paciente')">App Paciente & Staff</a>
           <a (click)="scrollTo('gestion')">Agenda & Facturación</a>
           <a (click)="scrollTo('marca-blanca')">Marca Blanca</a>
         </div>
 
         <div class="footer-nav-col">
-          <h5>Legal & Confianza</h5>
+          <p class="footer-col-title">Legal & Confianza</p>
           <a routerLink="/privacy">Política de Privacidad</a>
           <a routerLink="/terms">Términos del Servicio</a>
           <a (click)="scrollTo('faq')">Preguntas Frecuentes</a>

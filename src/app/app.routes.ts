@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: 'sif',
     loadComponent: () => import('./features/sif/sif.component').then(m => m.SifComponent),
-    title: 'Sif | Plataforma Clínica y App Móvil para Nutricionistas'
+    title: 'Software para Nutricionistas | Gestión Clínica y App Móvil - Sif'
   },
   {
     path: 'apps',
